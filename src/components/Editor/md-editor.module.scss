@@ -1,0 +1,12 @@
+@use '../../../styles/globals.module.scss' as g;
+
+.mdEditor {
+  line-height: 22px;
+  width: stretch;
+  resize: none;
+  font-size: large;
+  border-radius: 8px;
+  // font-family: 'Courier New', Courier, monospace;
+  // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: sans-serif;
+}

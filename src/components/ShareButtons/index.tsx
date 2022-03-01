@@ -14,7 +14,7 @@ export const ShareButtons: React.FC = () => {
 
   const shareUrlBase = useCurrentAbsUrl();
   const fbShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${shareUrlBase}`;
-  const lineShareUrl = `https://line.me/R/msg/text/?${shareUrlBase}`;
+  const lineShareUrl = `https://social-plugins.line.me/lineit/share?url=${shareUrlBase}`;
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${shareUrlBase}`;
 
   return (

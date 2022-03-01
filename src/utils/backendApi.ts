@@ -2,7 +2,8 @@ import type { Blog, Category, User } from '#src/types';
 
 import axios, { AxiosResponse } from 'axios';
 
-const BACKEND_ORIGIN = process.env.BACKEND_ORIGIN;
+const BACKEND_ORIGIN = process.env.NEXT_PUBLIC_BACKEND_ORIGIN;
+console.log(BACKEND_ORIGIN)
 
 const axiosWithCredentials = axios.create({
   withCredentials: true,

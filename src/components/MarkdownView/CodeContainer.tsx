@@ -24,6 +24,7 @@ const FILE_EXTENSIONS: { [lang: string]: string } = {
 type PropType = {
   filename?: string;
   fileExtension: string;
+  node: Element;
 };
 
 export const CodeContainer: React.FC<PropType> = (props) => {
@@ -72,8 +73,14 @@ export const CodeContainer: React.FC<PropType> = (props) => {
       <Tooltip title="copy" placement="top">
         <IconButton
           onClick={async () => {
+            const code = (
+              props.node.children[0] as unknown as {
+                type: string;
+                value: string;
+              }
+            ).value;
             await navigator.clipboard.writeText(
-              `"Copied from ${currentUrl}"\n\n${props.children._owner.memoizedProps.children}`,
+              `"Copied from ${currentUrl}"\n\n${code}`,
             );
           }}
           sx={{

@@ -73,11 +73,11 @@ export const BlogListItem: React.FC<{
         </Box>
 
         <Stack direction="row">
-          {blogData ? (
+          {blogData && categoryData ? (
             blogData.categories.map((val) => (
               <Chip
-                key={categoryData![val].key}
-                label={categoryData![val].label}
+                key={categoryData[val].key}
+                label={categoryData[val].label}
                 sx={{
                   color: COLORS.whiteColor,
                   backgroundColor: COLORS.accentDarkColor,

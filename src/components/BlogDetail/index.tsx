@@ -30,23 +30,23 @@ export const BlogDetail: React.FC<{ uuid: string }> = ({ uuid }) => {
     <>
       <Head>
         <title>{blogData.title}</title>
-        <meta name='description' content={blogData.description} />
+        <meta name="description" content={blogData.description} />
       </Head>
 
       <Container>
         <ShareButtons />
 
-        <Box paddingTop={3} textAlign='center'>
-          <Typography variant='h2'>{blogData.title}</Typography>
-          <Typography variant='h5'>{blogData.sub_title}</Typography>
+        <Box paddingTop={3} textAlign="center">
+          <Typography variant="h2">{blogData.title}</Typography>
+          <Typography variant="h5">{blogData.sub_title}</Typography>
         </Box>
 
-        <Box textAlign='right'>
-          <Typography variant='caption' display='block'>
+        <Box textAlign="right">
+          <Typography variant="caption" display="block">
             作成日時:&nbsp;
             {dayjs.unix(blogData.created_at).format('YYYY年MM月DD日')}
           </Typography>
-          <Typography variant='caption' display='block'>
+          <Typography variant="caption" display="block">
             更新日時:&nbsp;
             {dayjs.unix(blogData.updated_at).format('YYYY年MM月DD日')}
           </Typography>

@@ -32,12 +32,12 @@ function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
 type Order = 'asc' | 'desc';
 
 // Array.prototype.sort(compareFn?)の引数用関数
-function getComparator<Key extends keyof any>(
+function getComparator<Key extends keyof BlogTableData>(
   order: Order,
-  orderBy: Key
+  orderBy: Key,
 ): (
   a: { [key in Key]: number | string | Date | boolean },
-  b: { [key in Key]: number | string | Date | boolean }
+  b: { [key in Key]: number | string | Date | boolean },
 ) => number {
   return order === 'desc'
     ? (a, b) => descendingComparator(a, b, orderBy)
@@ -70,7 +70,7 @@ const headCells: readonly HeadCell[] = [
 interface EnhancedTableProps {
   onRequestSort: (
     event: React.MouseEvent,
-    property: keyof BlogTableData
+    property: keyof BlogTableData,
   ) => void;
   order: Order;
   orderBy: string;
@@ -79,7 +79,7 @@ interface EnhancedTableProps {
 
 // 機能付きtableヘッダーのコンポーネント
 const EnhancedTableHead: React.FC<EnhancedTableProps> = (
-  props: EnhancedTableProps
+  props: EnhancedTableProps,
 ) => {
   const { order, orderBy, onRequestSort } = props;
 
@@ -95,7 +95,7 @@ const EnhancedTableHead: React.FC<EnhancedTableProps> = (
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align='left'
+            align="left"
             sortDirection={orderBy === headCell.id ? order : false}
           >
             <TableSortLabel
@@ -130,7 +130,7 @@ export const BlogTable: React.FC<{ rows: BlogTableData[] }> = ({
 
   const handleRequestSort = (
     event: React.MouseEvent,
-    property: keyof BlogTableData
+    property: keyof BlogTableData,
   ) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
@@ -142,7 +142,7 @@ export const BlogTable: React.FC<{ rows: BlogTableData[] }> = ({
   };
 
   const handleChangeRowsPerPage = (
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setCurrentPage(0);
@@ -160,8 +160,8 @@ export const BlogTable: React.FC<{ rows: BlogTableData[] }> = ({
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}
-            aria-labelledby='tableTitle'
-            size='medium'
+            aria-labelledby="tableTitle"
+            size="medium"
           >
             <EnhancedTableHead
               order={order}
@@ -175,7 +175,7 @@ export const BlogTable: React.FC<{ rows: BlogTableData[] }> = ({
                 .sort(getComparator(order, orderBy))
                 .slice(
                   currentPage * rowsPerPage,
-                  currentPage * rowsPerPage + rowsPerPage
+                  currentPage * rowsPerPage + rowsPerPage,
                 )
                 .map((row, index) => {
                   const labelId = `enhanced-table-checkbox-${index}`;
@@ -187,10 +187,10 @@ export const BlogTable: React.FC<{ rows: BlogTableData[] }> = ({
                           <a style={{ fontSize: 'large' }}>{row.title}</a>
                         </Link>
                       </TableCell>
-                      <TableCell align='left'>
+                      <TableCell align="left">
                         {dayjs.unix(row.updated_at).format('YYYY年MM月DD日')}
                       </TableCell>
-                      <TableCell align='left'>
+                      <TableCell align="left">
                         {dayjs.unix(row.created_at).format('YYYY年MM月DD日')}
                       </TableCell>
                     </TableRow>
@@ -208,7 +208,7 @@ export const BlogTable: React.FC<{ rows: BlogTableData[] }> = ({
         </TableContainer>
         <TablePagination
           rowsPerPageOptions={ROWS_PER_PAGE_OPTIONS}
-          component='div'
+          component="div"
           count={rows.length}
           rowsPerPage={rowsPerPage}
           page={currentPage}

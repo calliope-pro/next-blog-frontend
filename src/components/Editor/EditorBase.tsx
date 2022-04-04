@@ -58,24 +58,24 @@ export const EditorBase: React.FC<{ blogData: Blog }> = ({ blogData }) => {
     >
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs
-          variant='fullWidth'
+          variant="fullWidth"
           value={focus}
           onChange={handleTabChange}
           TabIndicatorProps={{ style: { background: COLORS.baseColor } }}
-          aria-label='Editor tabs'
+          aria-label="Editor tabs"
         >
           <Tab
-            label='Editor'
+            label="Editor"
             sx={{ '&.Mui-selected': { color: COLORS.baseColor } }}
             {...a11yProps(0)}
           />
           <Tab
-            label='Preview'
+            label="Preview"
             sx={{ '&.Mui-selected': { color: COLORS.baseColor } }}
             {...a11yProps(1)}
           />
           <Tab
-            label='Meta'
+            label="Meta"
             sx={{ '&.Mui-selected': { color: COLORS.baseColor } }}
             {...a11yProps(2)}
           />

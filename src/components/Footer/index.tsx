@@ -6,7 +6,7 @@ import { COLORS } from '../../styles';
 export const Footer: React.FC = () => {
   return (
     <Box
-      textAlign='right'
+      textAlign="right"
       bgcolor={COLORS.baseColor}
       color={COLORS.whiteColor}
       padding={2}

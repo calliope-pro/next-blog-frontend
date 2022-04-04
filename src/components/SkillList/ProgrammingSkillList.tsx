@@ -40,10 +40,10 @@ export const ProgrammingSkillList: React.FC = () => {
 
   return (
     <List
-      component='nav'
+      component="nav"
       subheader={
         <>
-          <Typography variant='h5'>Programming</Typography>
+          <Typography variant="h5">Programming</Typography>
           <Divider />
         </>
       }
@@ -52,53 +52,53 @@ export const ProgrammingSkillList: React.FC = () => {
         <ListItemIcon>
           <PythonIcon />
         </ListItemIcon>
-        <ListItemText primary='Python' />
+        <ListItemText primary="Python" />
         {openPython ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
 
-      <Collapse in={openPython} timeout='auto' unmountOnExit>
-        <List component='div' disablePadding>
+      <Collapse in={openPython} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
           <ListItem sx={{ pl: 4 }}>
             <ListItemIcon>
               <FastapiIcon />
             </ListItemIcon>
-            <ListItemText primary='FastAPI' />
+            <ListItemText primary="FastAPI" />
           </ListItem>
           <ListItem sx={{ pl: 4 }}>
             <ListItemIcon>
               <DjangoIcon />
             </ListItemIcon>
-            <ListItemText primary='Django' />
+            <ListItemText primary="Django" />
           </ListItem>
           <ListItem sx={{ pl: 4 }}>
             <ListItemIcon>
               <SeleniumIcon />
             </ListItemIcon>
-            <ListItemText primary='Selenium' />
+            <ListItemText primary="Selenium" />
           </ListItem>
           <ListItem sx={{ pl: 4 }}>
             <ListItemIcon>
               <NumpyIcon />
             </ListItemIcon>
-            <ListItemText primary='NumPy' />
+            <ListItemText primary="NumPy" />
           </ListItem>
           <ListItem sx={{ pl: 4 }}>
             <ListItemIcon>
               <PandasIcon />
             </ListItemIcon>
-            <ListItemText primary='Pandas' />
+            <ListItemText primary="Pandas" />
           </ListItem>
           <ListItem sx={{ pl: 4 }}>
             <ListItemIcon>
               <ScikitLearnIcon />
             </ListItemIcon>
-            <ListItemText primary='Scikit-learn' />
+            <ListItemText primary="Scikit-learn" />
           </ListItem>
           <ListItem sx={{ pl: 4 }}>
             <ListItemIcon>
               <PytorchIcon />
             </ListItemIcon>
-            <ListItemText primary='PyTorch' />
+            <ListItemText primary="PyTorch" />
           </ListItem>
         </List>
       </Collapse>
@@ -107,47 +107,47 @@ export const ProgrammingSkillList: React.FC = () => {
         <ListItemIcon>
           <JavaScriptIcon />
         </ListItemIcon>
-        <ListItemText primary='JavaScript' />
+        <ListItemText primary="JavaScript" />
         {openJavaScript ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
 
-      <Collapse in={openJavaScript} timeout='auto' unmountOnExit>
-        <List component='div' disablePadding>
+      <Collapse in={openJavaScript} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
           <ListItem sx={{ pl: 4 }}>
             <ListItemIcon>
               <TypeScriptIcon />
             </ListItemIcon>
-            <ListItemText primary='TypeScript' />
+            <ListItemText primary="TypeScript" />
           </ListItem>
           <ListItem sx={{ pl: 4 }}>
             <ListItemIcon>
               <ReactIcon />
             </ListItemIcon>
-            <ListItemText primary='React' />
+            <ListItemText primary="React" />
           </ListItem>
           <ListItem sx={{ pl: 4 }}>
             <ListItemIcon>
               <NextjsIcon />
             </ListItemIcon>
-            <ListItemText primary='Next' />
+            <ListItemText primary="Next" />
           </ListItem>
           <ListItem sx={{ pl: 4 }}>
             <ListItemIcon>
               <SvelteIcon />
             </ListItemIcon>
-            <ListItemText primary='Svelte / SvelteKit' />
+            <ListItemText primary="Svelte / SvelteKit" />
           </ListItem>
           <ListItem sx={{ pl: 4 }}>
             <ListItemIcon>
               <VueIcon />
             </ListItemIcon>
-            <ListItemText primary='Vue' />
+            <ListItemText primary="Vue" />
           </ListItem>
           <ListItem sx={{ pl: 4 }}>
             <ListItemIcon>
               <NuxtIcon />
             </ListItemIcon>
-            <ListItemText primary='Nuxt' />
+            <ListItemText primary="Nuxt" />
           </ListItem>
         </List>
       </Collapse>

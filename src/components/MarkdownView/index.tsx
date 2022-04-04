@@ -20,14 +20,14 @@ export const MarkdownView: React.FC<{ body: string }> = ({ body }) => {
         className={style.mdView}
         remarkPlugins={[remarkGfm]}
         components={{
-          code({ inline, className, children, node, ...props }) {
+          code({ inline, className, children, ...props }) {
             const match = /^language-(\w+)(\[[\x20-\x7e]+?\])?$/.exec(
-              className || ''
+              className || '',
             );
             return !inline && match ? (
               // codeblockの時
               <SyntaxHighlighter
-                style={isDark ? okaidia : prism}
+                style={(isDark ? okaidia : prism) as string}
                 language={match[1]}
                 PreTag={CodeContainer}
                 showLineNumbers={true}
@@ -48,9 +48,9 @@ export const MarkdownView: React.FC<{ body: string }> = ({ body }) => {
           // h1は目次用にid付加・headerに隠れないようにsx設定
           h1: ({ children, node }) => (
             <Box
-              component='h1'
+              component="h1"
               id={String(node.position?.start.line)}
-              sx={{scrollMarginTop: {xs: '135px', sm: '95px'}}}
+              sx={{ scrollMarginTop: { xs: '135px', sm: '95px' } }}
             >
               {String(children)}
             </Box>

@@ -19,10 +19,10 @@ export const ShareButtons: React.FC = () => {
 
   return (
     <>
-      <Tooltip title={'Share!'} placement='top'>
+      <Tooltip title={'Share!'} placement="top">
         <Fab
           onClick={() => setIsClicked((prev) => !prev)}
-          aria-label='share'
+          aria-label="share"
           sx={{ top: '50vh', right: '6vw', position: 'fixed', zIndex: 10000 }}
         >
           {isClicked ? (
@@ -36,10 +36,10 @@ export const ShareButtons: React.FC = () => {
         <>
           <Grow in={isClicked} timeout={1500}>
             <Fab
-              aria-label='share'
+              aria-label="share"
               href={twitterShareUrl}
-              target='_blank'
-              rel='noopener noreferrer'
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
                 top: 'calc(50vh - 108px)',
                 right: 'calc(6vw + 10px)',
@@ -53,10 +53,10 @@ export const ShareButtons: React.FC = () => {
 
           <Grow in={isClicked} timeout={750}>
             <Fab
-              aria-label='share'
+              aria-label="share"
               href={fbShareUrl}
-              target='_blank'
-              rel='noopener noreferrer'
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
                 top: 'calc(50vh - 76px)',
                 right: 'calc(6vw + 76px)',
@@ -70,10 +70,10 @@ export const ShareButtons: React.FC = () => {
 
           <Grow in={isClicked}>
             <Fab
-              aria-label='share'
+              aria-label="share"
               href={lineShareUrl}
-              target='_blank'
-              rel='noopener noreferrer'
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
                 top: 'calc(50vh - 10px)',
                 right: 'calc(6vw + 108px)',

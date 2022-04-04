@@ -40,25 +40,25 @@ export const BlogListItem: React.FC<{
       onMouseLeave={() => setIsHovering(false)}
     >
       <Container>
-        <Box component='h1' paddingTop='15px' margin={0}>
+        <Box component="h1" paddingTop="15px" margin={0}>
           {blogData ? (
             <Link href={getBlogUrl(blogData.uuid)} passHref>
-              <MuiLink underline='hover' color={COLORS.baseColor}>
+              <MuiLink underline="hover" color={COLORS.baseColor}>
                 {blogData.title}
               </MuiLink>
             </Link>
           ) : (
-            <Skeleton animation='wave' />
+            <Skeleton animation="wave" />
           )}
         </Box>
 
-        <Box component='h3' margin='8px'>
-          {blogData?.sub_title || <Skeleton animation='wave' />}
+        <Box component="h3" margin="8px">
+          {blogData?.sub_title || <Skeleton animation="wave" />}
         </Box>
 
         <Box
-          component='div'
-          margin='8px'
+          component="div"
+          margin="8px"
           sx={{
             textOverflow: 'ellipsis',
             whiteSpace: 'nowrap',
@@ -68,30 +68,33 @@ export const BlogListItem: React.FC<{
           {blogData ? (
             markdownToTxt(blogData.content)
           ) : (
-            <Skeleton animation='wave' />
+            <Skeleton animation="wave" />
           )}
         </Box>
 
-        <Stack direction='row'>
+        <Stack direction="row">
           {blogData ? (
             blogData.categories.map((val) => (
               <Chip
                 key={categoryData![val].key}
                 label={categoryData![val].label}
-                sx={{ color: COLORS.whiteColor, backgroundColor: COLORS.accentDarkColor }}
+                sx={{
+                  color: COLORS.whiteColor,
+                  backgroundColor: COLORS.accentDarkColor,
+                }}
               />
             ))
           ) : (
-            <Skeleton animation='wave' />
+            <Skeleton animation="wave" />
           )}
         </Stack>
 
-        <Stack direction='row' justifyContent='end'>
+        <Stack direction="row" justifyContent="end">
           最終更新:&nbsp;
           {blogData ? (
             dayjs.unix(blogData.updated_at).format('YYYY年MM月DD日')
           ) : (
-            <Skeleton width='130px' animation='wave' />
+            <Skeleton width="130px" animation="wave" />
           )}
         </Stack>
       </Container>

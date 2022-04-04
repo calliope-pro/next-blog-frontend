@@ -9,7 +9,7 @@ const BlogListPage: NextPage = () => {
     <>
       <Head>
         <title>ブログ一覧</title>
-        <meta name='description' content='The list of all blogs' />
+        <meta name="description" content="The list of all blogs" />
       </Head>
 
       <Navbar />

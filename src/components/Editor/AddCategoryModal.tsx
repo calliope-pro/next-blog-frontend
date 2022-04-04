@@ -16,7 +16,7 @@ import {
 import { adminPostCategory } from '#src/utils/backendApi';
 
 // Categoryを追加するためのモーダル
-export const AddCategoryModal: React.FC<{}> = () => {
+export const AddCategoryModal: React.FC = () => {
   // Modalが表示されているか
   const [isDisplayed, setIsDisplayed] = useState(false);
 
@@ -52,31 +52,30 @@ export const AddCategoryModal: React.FC<{}> = () => {
         >
           <Stack>
             <Box sx={{ margin: '0 0 0 auto' }}>
-              <Tooltip title='Close'>
+              <Tooltip title="Close">
                 <IconButton onClick={() => setIsDisplayed(false)}>
                   <CloseIcon />
                 </IconButton>
               </Tooltip>
             </Box>
 
-            <Typography variant='h4'>Add Categories</Typography>
+            <Typography variant="h4">Add Categories</Typography>
 
             <TextField
               autoFocus
-              margin='normal'
-              label='New Category'
-              type='text'
-              placeholder='Python'
+              margin="normal"
+              label="New Category"
+              type="text"
+              placeholder="Python"
               inputRef={ref}
             />
 
             <Button
-              variant='contained'
-              onClick={() => {
-                console.log(ref.current?.value.trim());
-                adminPostCategory({
+              variant="contained"
+              onClick={async () => {
+                await adminPostCategory({
                   label: ref.current?.value.trim() || '',
-                  key: -1
+                  key: -1,
                 });
               }}
             >

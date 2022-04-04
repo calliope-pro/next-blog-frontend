@@ -13,7 +13,7 @@ const FILE_EXTENSIONS: { [lang: string]: string } = {
   javascript: '.js',
   js: '.js',
   jsx: '.jsx',
-  typescrip: '.ts',
+  typescript: '.ts',
   ts: '.ts',
   tsx: '.tsx',
   html: '.html',
@@ -21,19 +21,24 @@ const FILE_EXTENSIONS: { [lang: string]: string } = {
   scss: '.scss',
 };
 
-export const CodeContainer = (props: any) => {
+type PropType = {
+  filename?: string;
+  fileExtension: string;
+};
+
+export const CodeContainer: React.FC<PropType> = (props) => {
   const [isDark, setIsDark] = useRecoilState(isDarkState);
   const filename: string | undefined = props.filename;
   const fileExtension: string | undefined = filename
     ? filename.slice(1, -1)
-    : FILE_EXTENSIONS[props.fileExtension];
+    : FILE_EXTENSIONS[props.fileExtension.toLocaleLowerCase()];
   const currentUrl = useCurrentAbsUrl();
 
   return (
-    <Box position='relative' sx={{ marginTop: '60px' }} {...props}>
+    <Box position="relative" sx={{ marginTop: '60px' }} {...props}>
       {fileExtension && (
         <Typography
-          variant='subtitle2'
+          variant="subtitle2"
           sx={{
             padding: '1px 5px',
             top: '0px',
@@ -49,7 +54,7 @@ export const CodeContainer = (props: any) => {
         </Typography>
       )}
 
-      <Tooltip title='invert style' placement='top'>
+      <Tooltip title="invert style" placement="top">
         <IconButton
           onClick={() => setIsDark((prev) => !prev)}
           sx={{
@@ -60,15 +65,15 @@ export const CodeContainer = (props: any) => {
             color: isDark ? 'rgb(248, 248, 242)' : 'default',
           }}
         >
-          <LightModeIcon fontSize='small' />
+          <LightModeIcon fontSize="small" />
         </IconButton>
       </Tooltip>
 
-      <Tooltip title='copy' placement='top'>
+      <Tooltip title="copy" placement="top">
         <IconButton
-          onClick={() => {
-            navigator.clipboard.writeText(
-              `"Copied from ${currentUrl}"\n\n${props.children._owner.memoizedProps.children}`
+          onClick={async () => {
+            await navigator.clipboard.writeText(
+              `"Copied from ${currentUrl}"\n\n${props.children._owner.memoizedProps.children}`,
             );
           }}
           sx={{
@@ -79,7 +84,7 @@ export const CodeContainer = (props: any) => {
             color: isDark ? 'rgb(248, 248, 242)' : 'default',
           }}
         >
-          <ContentCopyIcon fontSize='small' />
+          <ContentCopyIcon fontSize="small" />
         </IconButton>
       </Tooltip>
       {props.children}

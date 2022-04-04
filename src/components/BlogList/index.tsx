@@ -9,7 +9,7 @@ import { useBlogListState, useCategoriesState } from '#src/utils/hooks';
 // ブログ一覧
 export const BlogList: React.FC = () => {
   // 全blogデータ
-  const { data } = useBlogListState();
+  const { data, error } = useBlogListState();
 
   // 全カテゴリーデータ
   const { data: categoryData } = useCategoriesState();
@@ -34,7 +34,11 @@ export const BlogList: React.FC = () => {
           data
             .slice(0, blogsDisplay)
             .map((blogData) => (
-              <BlogListItem blogData={blogData} categoryData={categoryData} key={blogData.uuid} />
+              <BlogListItem
+                blogData={blogData}
+                categoryData={categoryData}
+                key={blogData.uuid}
+              />
             ))
         ) : (
           <>
@@ -47,7 +51,7 @@ export const BlogList: React.FC = () => {
 
       {/* 無限スクロール */}
       {blogsDisplay >= (data?.length || 0) ? (
-        <Typography textAlign='center' variant='h4'>
+        <Typography textAlign="center" variant="h4">
           No More Contents...
         </Typography>
       ) : (

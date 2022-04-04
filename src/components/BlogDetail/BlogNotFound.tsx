@@ -8,10 +8,11 @@ export const BlogNotFound: React.FC<{ redirectUrl?: string }> = ({
   const router = useRouter();
   const [time, setTime] = useState(10);
   useEffect(() => {
-    const timer = setInterval(() => {
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
+    const timer = setInterval(async () => {
       setTime((prev) => Math.max(prev - 1, 0));
       if (time === 0) {
-        router.replace(redirectUrl);
+        await router.replace(redirectUrl);
       }
     }, 1000);
     return () => {
@@ -20,8 +21,8 @@ export const BlogNotFound: React.FC<{ redirectUrl?: string }> = ({
   }, [time, router, redirectUrl]);
   return (
     <Box>
-      <Typography variant='h5'>Not Found...</Typography>
-      <Typography variant='h5'>{time}秒後にリダイレクトします</Typography>
+      <Typography variant="h5">Not Found...</Typography>
+      <Typography variant="h5">{time}秒後にリダイレクトします</Typography>
     </Box>
   );
 };

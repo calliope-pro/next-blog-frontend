@@ -10,10 +10,10 @@ export const NavItem: React.FC<{ navItem: navItemType }> = ({ navItem }) => {
     <Link href={navItem.url} passHref>
       <MuiLink
         color={COLORS.whiteColor}
-        underline='none'
-        padding='4px'
+        underline="none"
+        padding="4px"
         width={{ xs: '120px', sm: '80px', md: '120px' }}
-        position='relative'
+        position="relative"
         sx={{
           '&::after': {
             position: 'absolute',
@@ -33,7 +33,7 @@ export const NavItem: React.FC<{ navItem: navItemType }> = ({ navItem }) => {
           },
         }}
       >
-        <Typography fontSize='23px' textAlign='center'>
+        <Typography fontSize="23px" textAlign="center">
           {navItem.label}
         </Typography>
       </MuiLink>

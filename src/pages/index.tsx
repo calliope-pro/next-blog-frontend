@@ -12,8 +12,8 @@ const HomePage: NextPage = () => {
       </Head>
 
       <Navbar />
-      <SelfIntroduction/>
-      <Footer/>
+      <SelfIntroduction />
+      <Footer />
     </>
   );
 };

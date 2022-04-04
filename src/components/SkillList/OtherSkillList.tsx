@@ -5,25 +5,25 @@ import { Divider, Typography } from '@mui/material';
 export const OtherSkillList: React.FC = () => {
   return (
     <List
-      component='nav'
+      component="nav"
       subheader={
         <>
-          <Typography variant='h5'>Other</Typography>
+          <Typography variant="h5">Other</Typography>
           <Divider />
         </>
       }
     >
       <ListItem sx={{ listStyle: 'disc', display: 'list-item' }}>
-        <Typography component='span'>英検 2級</Typography>
+        <Typography component="span">英検 2級</Typography>
       </ListItem>
       <ListItem sx={{ listStyle: 'disc', display: 'list-item' }}>
-        <Typography component='span'>HSK 5級</Typography>
+        <Typography component="span">HSK 5級</Typography>
       </ListItem>
       <ListItem sx={{ listStyle: 'disc', display: 'list-item' }}>
-        <Typography component='span'>応用情報技術者試験(AP) 勉強中</Typography>
+        <Typography component="span">応用情報技術者試験(AP) 勉強中</Typography>
       </ListItem>
       <ListItem sx={{ listStyle: 'disc', display: 'list-item' }}>
-        <Typography component='span'>E資格 勉強中</Typography>
+        <Typography component="span">E資格 勉強中</Typography>
       </ListItem>
     </List>
   );

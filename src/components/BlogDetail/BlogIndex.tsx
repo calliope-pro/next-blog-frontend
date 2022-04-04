@@ -20,8 +20,8 @@ export const BlogIndex: React.FC<{ body: string }> = ({ body }) => {
   const [isHidden, setIsHidden] = useState(true);
   return (
     <Box>
-      <Stack direction='row' justifyContent='space-between' alignItems='center'>
-        <Typography fontSize='24px' color={COLORS.baseColor}>
+      <Stack direction="row" justifyContent="space-between" alignItems="center">
+        <Typography fontSize="24px" color={COLORS.baseColor}>
           目次
         </Typography>
         {isHidden ? (
@@ -54,13 +54,13 @@ export const BlogIndex: React.FC<{ body: string }> = ({ body }) => {
             components={{
               h1: ({ children, node, index }) => (
                 <ListItem dense>
-                  <Link href={`#${node.position?.start.line}`} passHref>
+                  <Link href={`#${node.position!.start.line}`} passHref>
                     <MuiLink
-                      underline='none'
+                      underline="none"
                       color={COLORS.baseColor}
-                      fontSize='18px'
+                      fontSize="18px"
                     >
-                      {`${index! + 1}. ${children}`}
+                      {`${index! + 1}. ${children.toString()}`}
                     </MuiLink>
                   </Link>
                 </ListItem>

@@ -7,7 +7,7 @@ import useSWR from 'swr';
 
 import { fetchBlogList, fetchCategories } from '#src/utils/backendApi';
 
-export const useBlogListState = (onlyPublished=true) => {
+export const useBlogListState = (onlyPublished = true) => {
   return useSWR<Blog[], Error>('blogList', () => fetchBlogList(onlyPublished));
 };
 

@@ -15,7 +15,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <AppBar
-      position='sticky'
+      position="sticky"
       sx={{
         backgroundColor: COLORS.baseColor,
       }}
@@ -23,18 +23,18 @@ export const Navbar: React.FC = () => {
       <Container>
         <Stack
           direction={{ sm: 'row', xs: 'column' }}
-          justifyContent='space-between'
-          alignItems='center'
+          justifyContent="space-between"
+          alignItems="center"
         >
-          <Box component='h1'>
-            <Link href='/' passHref>
-              <MuiLink color={COLORS.whiteColor} underline='none'>
+          <Box component="h1">
+            <Link href="/" passHref>
+              <MuiLink color={COLORS.whiteColor} underline="none">
                 CaCaCa Blog
               </MuiLink>
             </Link>
           </Box>
 
-          <Stack direction='row' justifyContent='space-between'>
+          <Stack direction="row" justifyContent="space-between">
             {navItems.map((navItem, idx) => (
               <NavItem navItem={navItem} key={idx} />
             ))}

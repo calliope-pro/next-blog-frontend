@@ -17,13 +17,14 @@ export const MarkdownEditor: React.FC = () => {
 
   // バックエンドへ保存
   const saveBlogData = async () => {
-    blogData?.setBlogDataContextValue((prev) => {
-      prev.content = contentRef.current.value;
-      return prev;
-    });
-    console.log(blogData);
-    await adminPostBlog(blogData!.blogDataContextValue);
-    setIsSaved(() => true);
+    if (blogData) {
+      blogData.setBlogDataContextValue((prev) => {
+        prev.content = contentRef.current.value;
+        return prev;
+      });
+      await adminPostBlog(blogData.blogDataContextValue);
+      setIsSaved(() => true);
+    }
   };
 
   // ショートカットキー
@@ -69,9 +70,9 @@ export const MarkdownEditor: React.FC = () => {
         onClose={() => setIsSaved(() => false)}
       >
         <Alert
-          variant='filled'
+          variant="filled"
           onClose={() => setIsSaved(() => false)}
-          severity='success'
+          severity="success"
         >
           Saved Successfully!
         </Alert>
@@ -86,7 +87,7 @@ export const MarkdownEditor: React.FC = () => {
         onKeyDown={handleShortcutKey}
       />
 
-      <Button onClick={saveBlogData} variant='contained' color='error'>
+      <Button onClick={saveBlogData} variant="contained" color="error">
         save
       </Button>
     </Box>

@@ -27,7 +27,7 @@ export const DashBoard: React.FC = () => {
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         open={error ? true : false}
       >
-        <Alert variant='filled' severity='error' sx={{ width: '100%' }}>
+        <Alert variant="filled" severity="error" sx={{ width: '100%' }}>
           読み込みに失敗しました。
         </Alert>
       </Snackbar>
@@ -41,11 +41,11 @@ export const DashBoard: React.FC = () => {
       <BlogTable rows={rows} />
       <Fab
         href={`admin/${getNewUuid()}`}
-        size='large'
-        color='primary'
+        size="large"
+        color="primary"
         sx={{ left: 40, bottom: 30, position: 'fixed' }}
       >
-        <AddIcon color='inherit' />
+        <AddIcon color="inherit" />
       </Fab>
     </>
   );

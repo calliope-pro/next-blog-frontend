@@ -16,7 +16,7 @@ import {
 } from 'react-icons/si';
 
 export const LineIcon: React.FC = () => {
-  return <BsLine size={24} color='#06C755' />;
+  return <BsLine size={24} color="#06C755" />;
 };
 
 export const PythonIcon: React.FC = () => {

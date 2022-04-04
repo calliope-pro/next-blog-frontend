@@ -4,7 +4,7 @@ import { isAuthenticatedState } from '../../atoms/authAtom';
 import { LoginForm, DashBoard } from '../../components';
 
 const LoginPage = () => {
-  let isAuthed = useRecoilValue(isAuthenticatedState);
+  const isAuthed = useRecoilValue(isAuthenticatedState);
 
   if (isAuthed) {
     return <DashBoard />;

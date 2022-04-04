@@ -49,35 +49,34 @@ export const MetaDataEditor: React.FC = () => {
     data.content = blogData.blogDataContextValue.content;
     data.created_at = dayjs(data.created_at).unix();
     data.updated_at = dayjs(data.updated_at).unix();
-    console.log(data);
 
     await adminPostBlog(data);
     blogData.setBlogDataContextValue(() => data);
   });
 
   return (
-    <Box component='form' onSubmit={onSubmit}>
+    <Box component="form" onSubmit={onSubmit}>
       <TextField
         disabled
-        label='UUID'
+        label="UUID"
         value={blogData.blogDataContextValue.uuid}
-        type='text'
+        type="text"
         fullWidth
-        variant='outlined'
-        margin='normal'
+        variant="outlined"
+        margin="normal"
         {...register('uuid')}
       />
 
       <TextField
         autoFocus
-        label='Title'
+        label="Title"
         defaultValue={blogData.blogDataContextValue.title}
-        type='text'
+        type="text"
         fullWidth
-        autoComplete='off'
-        variant='outlined'
-        margin='normal'
-        helperText='max length 30.'
+        autoComplete="off"
+        variant="outlined"
+        margin="normal"
+        helperText="max length 30."
         required
         error={errors.title ? true : false}
         {...register('title', {
@@ -87,14 +86,14 @@ export const MetaDataEditor: React.FC = () => {
       />
 
       <TextField
-        label='Sub Title'
+        label="Sub Title"
         defaultValue={blogData.blogDataContextValue.sub_title}
-        type='text'
+        type="text"
         fullWidth
-        autoComplete='off'
-        variant='outlined'
-        margin='normal'
-        helperText='max length 100.'
+        autoComplete="off"
+        variant="outlined"
+        margin="normal"
+        helperText="max length 100."
         error={errors.sub_title ? true : false}
         {...register('sub_title', {
           maxLength: 100,
@@ -102,21 +101,21 @@ export const MetaDataEditor: React.FC = () => {
       />
 
       <TextField
-        label='Description(for SEO)'
+        label="Description(for SEO)"
         defaultValue={blogData.blogDataContextValue.description}
-        type='text'
+        type="text"
         fullWidth
-        autoComplete='off'
-        variant='outlined'
-        margin='normal'
-        helperText='max length: 200.'
+        autoComplete="off"
+        variant="outlined"
+        margin="normal"
+        helperText="max length: 200."
         error={errors.description ? true : false}
         {...register('description', {
           maxLength: 200,
         })}
       />
 
-      <Stack direction='row' alignItems='center' gap={1}>
+      <Stack direction="row" alignItems="center" gap={1}>
         <AddCategoryModal />
         <Autocomplete
           multiple
@@ -126,29 +125,28 @@ export const MetaDataEditor: React.FC = () => {
           defaultValue={
             categoryData
               ? blogData.blogDataContextValue.categories.map(
-                  (value) => categoryData[value].label
+                  (value) => categoryData[value].label,
                 )
               : []
           }
           filterSelectedOptions
           onChange={(e, val) => {
-            console.log(val);
             setValue(
               'categories',
               val.map(
                 (categoryLabel) =>
                   categoryData!.find((value) => value.label === categoryLabel)!
-                    .key
-              )
+                    .key,
+              ),
             );
           }}
           renderInput={(params) => (
             <TextField
               autoFocus={false}
               {...params}
-              label='Categories'
-              placeholder='Python, JavaScript, ...'
-              margin='normal'
+              label="Categories"
+              placeholder="Python, JavaScript, ..."
+              margin="normal"
             />
           )}
         />
@@ -158,10 +156,10 @@ export const MetaDataEditor: React.FC = () => {
         <Box sx={{ display: 'flex' }}>
           <MobileDatePicker
             disableFuture={true}
-            label='作成日時'
+            label="作成日時"
             value={watch(
               'created_at',
-              blogData.blogDataContextValue.created_at * 1000
+              blogData.blogDataContextValue.created_at * 1000,
             )}
             onChange={(newDate) => {
               setValue('created_at', newDate!);
@@ -169,7 +167,7 @@ export const MetaDataEditor: React.FC = () => {
             renderInput={(p) => (
               <TextField
                 fullWidth
-                margin='normal'
+                margin="normal"
                 {...p}
                 {...register('created_at')}
               />
@@ -178,10 +176,10 @@ export const MetaDataEditor: React.FC = () => {
 
           <MobileDateTimePicker
             disableFuture={true}
-            label='更新日時'
+            label="更新日時"
             value={watch(
               'updated_at',
-              blogData.blogDataContextValue.updated_at * 1000
+              blogData.blogDataContextValue.updated_at * 1000,
             )}
             onChange={(newDate) => {
               setValue('updated_at', newDate!);
@@ -189,7 +187,7 @@ export const MetaDataEditor: React.FC = () => {
             renderInput={(p) => (
               <TextField
                 fullWidth
-                margin='normal'
+                margin="normal"
                 {...p}
                 {...register('updated_at')}
               />
@@ -206,7 +204,7 @@ export const MetaDataEditor: React.FC = () => {
         }
         control={
           <Switch
-            color='info'
+            color="info"
             defaultChecked={blogData.blogDataContextValue.is_published}
           />
         }
@@ -215,7 +213,7 @@ export const MetaDataEditor: React.FC = () => {
 
       <br />
 
-      <Button type='submit' variant='contained' color='error'>
+      <Button type="submit" variant="contained" color="error">
         save
       </Button>
     </Box>

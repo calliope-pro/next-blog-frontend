@@ -2,7 +2,8 @@ import type { NextPage } from 'next';
 
 import Head from 'next/head';
 
-import { BlogList, Navbar } from '../../components';
+import { BlogList } from '#src/components';
+import { ClientLayout } from '#src/layouts/client';
 
 const BlogListPage: NextPage = () => {
   return (
@@ -12,8 +13,9 @@ const BlogListPage: NextPage = () => {
         <meta name="description" content="The list of all blogs" />
       </Head>
 
-      <Navbar />
-      <BlogList />
+      <ClientLayout>
+        <BlogList />
+      </ClientLayout>
     </>
   );
 };

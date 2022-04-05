@@ -1,8 +1,9 @@
+import { ClientLayout } from '#src/layouts/client';
 import type { NextPage } from 'next';
 
 import Head from 'next/head';
 
-import { Footer, Navbar, SelfIntroduction } from '../components';
+import { SelfIntroduction } from '../components';
 
 const HomePage: NextPage = () => {
   return (
@@ -11,9 +12,9 @@ const HomePage: NextPage = () => {
         <title>Home</title>
       </Head>
 
-      <Navbar />
-      <SelfIntroduction />
-      <Footer />
+      <ClientLayout>
+        <SelfIntroduction />
+      </ClientLayout>
     </>
   );
 };

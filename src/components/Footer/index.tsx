@@ -9,7 +9,8 @@ export const Footer: React.FC = () => {
       textAlign="right"
       bgcolor={COLORS.baseColor}
       color={COLORS.whiteColor}
-      padding={2}
+      mt={5}
+      p={2}
     >
       <Container>&copy;{dayjs().year()} - CaCaCa Blog</Container>
     </Box>

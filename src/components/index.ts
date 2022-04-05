@@ -27,4 +27,4 @@ export { MarkdownView } from './MarkdownView';
 export { Navbar } from './Navbar';
 export { SelfIntroduction } from './SelfIntroduction';
 export { ShareButtons } from './ShareButtons';
-export { SkillList } from './SkillList';
+export { SkillList } from './SelfIntroduction/SkillList';

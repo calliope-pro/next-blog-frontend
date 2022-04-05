@@ -1,10 +1,11 @@
 import { Box, Container, Stack, Typography } from '@mui/material';
 
-import { SkillList } from '../SkillList';
+import { SkillList } from '#src/components/SelfIntroduction/SkillList';
+import { ContactForm } from './ContactForm';
 
 export const SelfIntroduction: React.FC = () => {
   return (
-    <Stack marginTop={5}>
+    <Stack>
       <Container>
         <Typography variant="h3" textAlign="center">
           About
@@ -28,9 +29,10 @@ export const SelfIntroduction: React.FC = () => {
         </Typography>
         <SkillList />
 
-        {/* <Typography variant='h3' textAlign='center'>
+        <Typography variant="h3" textAlign="center">
           Contact
-        </Typography> */}
+        </Typography>
+        <ContactForm />
       </Container>
     </Stack>
   );

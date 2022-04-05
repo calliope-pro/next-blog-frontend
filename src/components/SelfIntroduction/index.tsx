@@ -22,10 +22,12 @@ export const SelfIntroduction: React.FC = () => {
           当サイトはポートフォリオ兼ブログサイトとなっています。
           プログラミングのことが主になると思いますが、その他のこともブログに作成していきたいと思います。
         </Box>
+
         <Typography variant="h3" textAlign="center">
           Skill
         </Typography>
         <SkillList />
+
         {/* <Typography variant='h3' textAlign='center'>
           Contact
         </Typography> */}

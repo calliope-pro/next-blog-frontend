@@ -1,11 +1,11 @@
 import { ProgrammingSkillList } from './ProgrammingSkillList';
-import { OtherSkillList } from './OtherSkillList';
+import { CertificationsList } from './CertificationsList';
 
 export const SkillList: React.FC = () => {
   return (
     <>
       <ProgrammingSkillList />
-      <OtherSkillList />
+      <CertificationsList />
     </>
   );
 };

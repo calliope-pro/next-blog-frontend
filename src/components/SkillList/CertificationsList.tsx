@@ -2,13 +2,13 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import { Divider, Typography } from '@mui/material';
 
-export const OtherSkillList: React.FC = () => {
+export const CertificationsList: React.FC = () => {
   return (
     <List
       component="nav"
       subheader={
         <>
-          <Typography variant="h5">Other</Typography>
+          <Typography variant="h5">Certifications</Typography>
           <Divider />
         </>
       }

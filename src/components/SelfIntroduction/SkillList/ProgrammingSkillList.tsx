@@ -24,7 +24,7 @@ import {
   SvelteIcon,
   TypeScriptIcon,
   VueIcon,
-} from '../Icons';
+} from '../../Icons';
 
 export const ProgrammingSkillList: React.FC = () => {
   const [openPython, setOpenPython] = useState(false);

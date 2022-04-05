@@ -1,3 +1,4 @@
+import { ContactContentType } from '#src/components/SelfIntroduction/ContactForm';
 import type { Blog, Category, User } from '#src/types';
 
 import axios, { AxiosResponse } from 'axios';
@@ -61,4 +62,10 @@ export async function fetchCategories() {
     value.key = Number(value.key);
   });
   return categoryList;
+}
+
+export async function postContactForm(content: ContactContentType) {
+  const REQUEST_URL = new URL('/api/contact-form/', BACKEND_ORIGIN).href;
+  const response: AxiosResponse = await axios.post(REQUEST_URL, content);
+  return response.status;
 }

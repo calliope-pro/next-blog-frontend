@@ -27,9 +27,9 @@ export const BlogList: React.FC = () => {
   }, [isDisplayed]);
 
   return (
-    <Container>
+    <Container sx={{ flex: 1 }}>
       {/* ブログ一覧 */}
-      <Stack gap={5} marginTop={3}>
+      <Stack gap={5}>
         {data ? (
           data
             .slice(0, blogsDisplay)
@@ -51,7 +51,7 @@ export const BlogList: React.FC = () => {
 
       {/* 無限スクロール */}
       {blogsDisplay >= (data?.length || 0) ? (
-        <Typography textAlign="center" variant="h4">
+        <Typography textAlign="center" variant="h4" pt={5}>
           No More Contents...
         </Typography>
       ) : (

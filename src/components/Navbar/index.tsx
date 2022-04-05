@@ -18,6 +18,7 @@ export const Navbar: React.FC = () => {
       position="sticky"
       sx={{
         backgroundColor: COLORS.baseColor,
+        mb: 5,
       }}
     >
       <Container>

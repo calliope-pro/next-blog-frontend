@@ -4,6 +4,7 @@
     "tsconfigRootDir": ".",
     "project": "tsconfig.json"
   },
+  "ignorePatterns": ["next.config.js"],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
   "extends": [

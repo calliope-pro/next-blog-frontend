@@ -1,5 +1,11 @@
 import { ContactContentType } from '#src/components/SelfIntroduction/ContactForm';
-import type { Blog, Category, User } from '#src/types';
+import type {
+  Blog,
+  Category,
+  ImageBase64URL,
+  ImageResponse,
+  User,
+} from '#src/types';
 
 import axios, { AxiosResponse } from 'axios';
 
@@ -40,6 +46,13 @@ export async function adminPostCategory(category: Category) {
     REQUEST_URL,
     category,
   );
+  return response;
+}
+
+export async function adminPostImageBase64URL(imageBase64URL: ImageBase64URL) {
+  const REQUEST_URL = new URL('/api/admin/images/post/', BACKEND_ORIGIN).href;
+  const response: AxiosResponse<ImageResponse> =
+    await axiosWithCredentials.post(REQUEST_URL, imageBase64URL);
   return response;
 }
 

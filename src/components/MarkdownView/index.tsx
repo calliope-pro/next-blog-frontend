@@ -1,5 +1,6 @@
 import style from './md-view.module.scss';
 
+import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { prism, okaidia } from 'react-syntax-highlighter/dist/cjs/styles/prism';
@@ -52,8 +53,19 @@ export const MarkdownView: React.FC<{ body: string }> = ({ body }) => {
               id={String(node.position?.start.line)}
               sx={{ scrollMarginTop: { xs: '135px', sm: '95px' } }}
             >
-              {String(children)}
+              {children}
             </Box>
+          ),
+          img: ({ node }) => (
+            <Image
+              src={node.properties!.src as string}
+              alt={node.properties!.alt as string}
+              quality={90}
+              width="100%"
+              height="40%"
+              layout="responsive"
+              objectFit="contain"
+            />
           ),
         }}
       >

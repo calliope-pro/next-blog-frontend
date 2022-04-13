@@ -6,7 +6,7 @@ import { COLORS } from '#src/styles';
 import { postContactForm } from '#src/utils/backendApi';
 
 export type ContactContentType = {
-  subject?: string;
+  subject: string;
   email: string;
   body: string;
 };
@@ -56,7 +56,7 @@ export const ContactForm = () => {
         variant="contained"
         startIcon={<SendIcon />}
         size="large"
-        sx={{ background: COLORS.accentDarkColor, width: '80%', mt:1}}
+        sx={{ background: COLORS.accentDarkColor, width: '80%', mt: 1 }}
         type="submit"
       >
         送信

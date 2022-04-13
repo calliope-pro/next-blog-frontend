@@ -1,10 +1,10 @@
 import style from './md-editor.module.scss';
 
-import { useState, useContext, useRef } from 'react';
+import { useState, useContext, useRef, ClipboardEvent } from 'react';
 import { Alert, Box, Button, Snackbar, TextareaAutosize } from '@mui/material';
 
 import { blogDataContext } from './contexts';
-import { adminPostBlog } from '#src/utils/backendApi';
+import { adminPostBlog, adminPostImageBase64URL } from '#src/utils/backendApi';
 
 export const MarkdownEditor: React.FC = () => {
   // saveされたか
@@ -27,6 +27,27 @@ export const MarkdownEditor: React.FC = () => {
     }
   };
 
+  const uploadImageBase64URL = (e: ClipboardEvent<HTMLTextAreaElement>) => {
+    const file = e.clipboardData.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = async () => {
+        const res = await adminPostImageBase64URL({
+          url: reader.result as string,
+        });
+        const cursorPosition = contentRef.current.selectionStart;
+        const body = contentRef.current.value;
+        contentRef.current.value =
+          body.substring(0, cursorPosition) +
+          `![画像](${
+            process.env.NEXT_PUBLIC_BACKEND_ORIGIN as string
+          }/api/images/${res.data.name})` +
+          body.substring(cursorPosition);
+      };
+    }
+  };
+
   // ショートカットキー
   const handleShortcutKey = async (e: React.KeyboardEvent) => {
     // ctrl + sでsave
@@ -44,7 +65,6 @@ export const MarkdownEditor: React.FC = () => {
       bodies[cursorRow - 1] = '  ' + bodies[cursorRow - 1];
       cursorPosition += 2;
       contentRef.current.value = bodies.join('\n');
-      contentRef.current.setSelectionRange(cursorPosition, cursorPosition);
     }
     // ctrl + [でインデント削除
     if (e.ctrlKey && e.key === '[') {
@@ -58,7 +78,6 @@ export const MarkdownEditor: React.FC = () => {
         cursorPosition -= 2;
       }
       contentRef.current.value = bodies.join('\n');
-      contentRef.current.setSelectionRange(cursorPosition, cursorPosition);
     }
   };
 
@@ -85,6 +104,7 @@ export const MarkdownEditor: React.FC = () => {
         ref={contentRef}
         defaultValue={blogData?.blogDataContextValue.content}
         onKeyDown={handleShortcutKey}
+        onPaste={uploadImageBase64URL}
       />
 
       <Button onClick={saveBlogData} variant="contained" color="error">

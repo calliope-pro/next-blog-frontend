@@ -18,7 +18,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         </Head>
         <Component {...pageProps} />
       </RecoilRoot>
-      <Script src="https://adm.shinobi.jp/s/2e5a457f2e9413895ab163e786502b5f"></Script>
     </>
   );
 }

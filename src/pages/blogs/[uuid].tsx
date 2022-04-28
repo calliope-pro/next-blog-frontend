@@ -3,7 +3,8 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import { BlogDetail, Navbar } from '../../components';
+import { BlogDetail } from '#src/components';
+import { ClientLayout } from '#src/layouts/client';
 
 const BlogDetailPage: NextPage = () => {
   const router = useRouter();
@@ -14,11 +15,11 @@ const BlogDetailPage: NextPage = () => {
       setUuid(uuid);
     }
   }, [router]);
+
   return (
-    <>
-      <Navbar />
+    <ClientLayout isAdsExist>
       <>{uuid && <BlogDetail uuid={uuid} />}</>
-    </>
+    </ClientLayout>
   );
 };
 

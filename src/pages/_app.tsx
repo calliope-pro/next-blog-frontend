@@ -2,7 +2,6 @@ import '../../styles/global.scss';
 import type { AppProps } from 'next/app';
 
 import Head from 'next/head';
-import Script from 'next/script';
 import { RecoilRoot } from 'recoil';
 
 function MyApp({ Component, pageProps }: AppProps) {

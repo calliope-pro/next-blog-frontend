@@ -13,7 +13,7 @@ const BlogListPage: NextPage = () => {
         <meta name="description" content="The list of all blogs" />
       </Head>
 
-      <ClientLayout>
+      <ClientLayout isAdsExist>
         <BlogList />
       </ClientLayout>
     </>

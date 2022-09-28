@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 
 import Head from 'next/head';
 
-import { SelfIntroduction } from '../components';
+import { SelfIntroduction } from '#src/components';
 
 const HomePage: NextPage = () => {
   return (

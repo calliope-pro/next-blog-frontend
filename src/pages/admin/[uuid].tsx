@@ -2,8 +2,8 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 
-import { LoginForm, Editor, Loader } from '../../components';
-import { isAuthenticatedState } from '../../atoms/authAtom';
+import { LoginForm, Editor, Loader } from '#src/components';
+import { isAuthenticatedState } from '#src/atoms/authAtom';
 
 const CreateBlogPage = () => {
   const isAuthed = useRecoilValue(isAuthenticatedState);

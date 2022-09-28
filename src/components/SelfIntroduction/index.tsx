@@ -1,6 +1,6 @@
 import { Box, Container, Stack, Typography } from '@mui/material';
 
-import { SkillList } from '#src/components/SelfIntroduction/SkillList';
+import { SkillList } from '#src/components';
 import { ContactForm } from './ContactForm';
 
 export const SelfIntroduction: React.FC = () => {

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-restricted-imports
 import '../../styles/global.scss';
 import type { AppProps } from 'next/app';
 

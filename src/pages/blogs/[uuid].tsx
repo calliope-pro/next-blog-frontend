@@ -1,26 +1,27 @@
-import type { NextPage } from 'next';
-
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import type { Blog } from '#src/types';
+import type { GetServerSideProps, NextPage } from 'next';
 
 import { BlogDetail } from '#src/components';
 import { ClientLayout } from '#src/layouts/client';
+import { fetchBlog } from '#src/utils/api/blog';
 
-const BlogDetailPage: NextPage = () => {
-  const router = useRouter();
-  const [uuid, setUuid] = useState<string | undefined>(undefined);
-  useEffect(() => {
-    if (router.isReady) {
-      const uuid = router.query.uuid as string;
-      setUuid(uuid);
-    }
-  }, [router]);
-
-  return (
-    <ClientLayout isAdsExist>
-      <>{uuid && <BlogDetail uuid={uuid} />}</>
-    </ClientLayout>
-  );
+const BlogDetailPage: NextPage<{ blog: Blog }> = ({ blog }) => {
+    return (
+        <ClientLayout isAdsExist>
+            <BlogDetail blog={blog} />
+        </ClientLayout>
+    );
 };
 
 export default BlogDetailPage;
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    try {
+        const blog = await fetchBlog(context.query.uuid as string);
+        return {
+            props: { blog },
+        };
+    } catch (error) {
+        return { notFound: true };
+    }
+};

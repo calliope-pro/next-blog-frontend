@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import { Box, Container } from '@mui/material';
 
-import { COLORS } from '../../styles';
+import { COLORS } from '#src/styles';
 
 export const Footer: React.FC = () => {
   return (

@@ -1,10 +1,10 @@
-import type { navItem } from '../../types';
+import type { navItem } from '#src/types';
 
 import Link from 'next/link';
 import { AppBar, Box, Container, Link as MuiLink, Stack } from '@mui/material';
 
 import { NavItem } from './NavItem';
-import { COLORS } from '../../styles';
+import { COLORS } from '#src/styles';
 
 // 画面上部のナビゲーションバー
 export const Navbar: React.FC = () => {

@@ -24,6 +24,7 @@ export const ClientLayout: React.FC<ClientLayoutPropType> = ({
         }}
       />
       <Script
+        id='admax-ads'
         type="text/javascript"
         dangerouslySetInnerHTML={{
           __html:
@@ -32,7 +33,6 @@ export const ClientLayout: React.FC<ClientLayoutPropType> = ({
       />
       <Script
         type="text/javascript"
-        charSet="utf-8"
         src="https://adm.shinobi.jp/st/t.js"
         async
       />

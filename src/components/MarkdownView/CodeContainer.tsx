@@ -3,9 +3,9 @@ import { Box, IconButton, Tooltip, Typography } from '@mui/material';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
-import { isDarkState } from '../../atoms/codeStyleAtom';
-import { COLORS } from '../../styles';
-import { useCurrentAbsUrl } from '../../utils/hooks';
+import { isDarkState } from '#src/atoms/codeStyleAtom';
+import { COLORS } from '#src/styles';
+import { useCurrentAbsUrl } from '#src/utils/hooks';
 
 const FILE_EXTENSIONS: { [lang: string]: string } = {
   python: '.py',

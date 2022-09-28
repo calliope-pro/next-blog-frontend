@@ -19,7 +19,7 @@ import {
 } from '@mui/lab';
 import AdapterDayjs from '@mui/lab/AdapterDayjs';
 
-import { adminPostBlog } from '#src/utils/backendApi';
+import { adminPostBlog } from '#src/utils/api/auth';
 import { useCategoriesState } from '#src/utils/hooks';
 import { AddCategoryModal } from './AddCategoryModal';
 import { blogDataContext, BlogDataContextType } from './contexts';
@@ -49,6 +49,7 @@ export const MetaDataEditor: React.FC = () => {
     data.content = blogData.blogDataContextValue.content;
     data.created_at = dayjs(data.created_at).unix();
     data.updated_at = dayjs(data.updated_at).unix();
+    console.log(data);
 
     await adminPostBlog(data);
     blogData.setBlogDataContextValue(() => data);

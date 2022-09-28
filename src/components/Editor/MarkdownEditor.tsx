@@ -4,7 +4,7 @@ import { useState, useContext, useRef } from 'react';
 import { Alert, Box, Button, Snackbar, TextareaAutosize } from '@mui/material';
 
 import { blogDataContext } from './contexts';
-import { adminPostBlog } from '#src/utils/backendApi';
+import { adminPostBlog } from '#src/utils/api/auth';
 
 export const MarkdownEditor: React.FC = () => {
   // saveされたか

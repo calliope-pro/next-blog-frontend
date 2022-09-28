@@ -3,7 +3,7 @@ import { Box, Button, TextField } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 
 import { COLORS } from '#src/styles';
-import { postContactForm } from '#src/utils/backendApi';
+import { postContactForm } from '#src/utils/api/auth';
 
 export type ContactContentType = {
   subject?: string;

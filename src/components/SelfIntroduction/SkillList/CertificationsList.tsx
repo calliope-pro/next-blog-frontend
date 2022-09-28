@@ -20,9 +20,6 @@ export const CertificationsList: React.FC = () => {
         <Typography component="span">HSK 5級</Typography>
       </ListItem>
       <ListItem sx={{ listStyle: 'disc', display: 'list-item' }}>
-        <Typography component="span">応用情報技術者試験(AP) 勉強中</Typography>
-      </ListItem>
-      <ListItem sx={{ listStyle: 'disc', display: 'list-item' }}>
         <Typography component="span">E資格 勉強中</Typography>
       </ListItem>
     </List>

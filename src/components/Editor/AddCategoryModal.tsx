@@ -13,7 +13,7 @@ import {
   Typography,
 } from '@mui/material';
 
-import { adminPostCategory } from '#src/utils/backendApi';
+import { adminPostCategory } from '#src/utils/api/auth';
 
 // Categoryを追加するためのモーダル
 export const AddCategoryModal: React.FC = () => {

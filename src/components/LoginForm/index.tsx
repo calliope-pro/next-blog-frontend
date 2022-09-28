@@ -1,12 +1,12 @@
-import type { User } from '../../types';
+import type { User } from '#src/types';
 
 import assert from 'assert';
 import { useForm } from 'react-hook-form';
 import { useSetRecoilState } from 'recoil';
 import { FormControl, InputLabel, Input, Button, Box } from '@mui/material';
 
-import { isAuthenticatedState } from '../../atoms/authAtom';
-import { adminLogin } from '../../utils/backendApi';
+import { isAuthenticatedState } from '#src/atoms/authAtom';
+import { adminLogin } from '#src/utils/api/auth';
 
 export const LoginForm: React.FC = () => {
   const setIsAuthed = useSetRecoilState(isAuthenticatedState);

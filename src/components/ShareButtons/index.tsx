@@ -6,8 +6,8 @@ import ShareIcon from '@mui/icons-material/Share';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
 import { LineIcon } from '..';
-import { COLORS } from '../../styles';
-import { useCurrentAbsUrl } from '../../utils/hooks';
+import { COLORS } from '#src/styles';
+import { useCurrentAbsUrl } from '#src/utils/hooks';
 
 export const ShareButtons: React.FC = () => {
   const [isClicked, setIsClicked] = useState(false);

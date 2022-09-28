@@ -8,8 +8,10 @@ import useSWR from 'swr';
 import { fetchBlogList, fetchCategories } from '#src/utils/api/blog';
 
 export const useBlogListState = (onlyPublished = true) => {
-    return useSWR<Blog[], Error>('blogList', () =>
-        fetchBlogList(onlyPublished),
+    return useSWR<Blog[], Error>(
+        'blogList',
+        () => fetchBlogList(onlyPublished),
+        { suspense: true },
     );
 };
 

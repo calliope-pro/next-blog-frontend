@@ -1,8 +1,6 @@
 // bultin CSS用
-@use './globals.module.scss' as g;
 
 body {
-    background-color: g.$main-color;
     margin: 0;
     overflow-y: scroll;
 }

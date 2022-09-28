@@ -29,9 +29,9 @@ export const MarkdownView: React.FC<{ body: string }> = ({ body }) => {
                             // codeblockの時
                             <SyntaxHighlighter
                                 style={(isDark ? okaidia : prism) as string}
-                                language={match[1]}
+                                language={match[1].toLowerCase()}
                                 PreTag={CodeContainer}
-                                showLineNumbers={true}
+                                showLineNumbers
                                 filename={match[2]}
                                 fileExtension={match[1]}
                                 customStyle={{ padding: '25px 1rem 22px 1rem' }}

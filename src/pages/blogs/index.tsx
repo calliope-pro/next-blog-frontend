@@ -1,13 +1,14 @@
-import type { GetServerSideProps, NextPage } from 'next';
+import type { NextPage } from 'next';
 
 import Head from 'next/head';
 
-import { BlogList } from '#src/components';
+import { BlogList, Loader } from '#src/components';
 import { ClientLayout } from '#src/layouts/client';
-import { fetchBlogList } from '#src/utils/api/blog';
-import { Blog } from '#src/types';
+import { useBlogListState } from '#src/utils/hooks';
+import { Suspense } from 'react';
 
-const BlogListPage: NextPage<{ blogs: Blog[] }> = ({ blogs }) => {
+const BlogListPage: NextPage = () => {
+    const { data: blogs } = useBlogListState();
     return (
         <>
             <Head>
@@ -16,17 +17,12 @@ const BlogListPage: NextPage<{ blogs: Blog[] }> = ({ blogs }) => {
             </Head>
 
             <ClientLayout isAdsExist>
-                <BlogList blogs={blogs} />
+                <Suspense fallback={<Loader />}>
+                    <BlogList blogs={blogs ?? []} />
+                </Suspense>
             </ClientLayout>
         </>
     );
 };
 
 export default BlogListPage;
-
-export const getServerSideProps: GetServerSideProps = async () => {
-    const blogs = await fetchBlogList();
-    return {
-        props: { blogs },
-    };
-};

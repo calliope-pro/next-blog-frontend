@@ -5,22 +5,26 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 
-import { fetchBlogList, fetchCategories } from '#src/utils/backendApi';
+import { fetchBlogList, fetchCategories } from '#src/utils/api/blog';
 
 export const useBlogListState = (onlyPublished = true) => {
-  return useSWR<Blog[], Error>('blogList', () => fetchBlogList(onlyPublished));
+    return useSWR<Blog[], Error>(
+        'blogList',
+        () => fetchBlogList(onlyPublished),
+        { suspense: true },
+    );
 };
 
 export const useCategoriesState = () => {
-  return useSWR<Category[], Error>('categories', () => fetchCategories());
+    return useSWR<Category[], Error>('categories', () => fetchCategories());
 };
 
 export const useCurrentAbsUrl = () => {
-  const router = useRouter();
-  const { origin } = nextAbsoluteUrl();
-  const [currentUrl, setCurrentUrl] = useState<string>('');
-  useEffect(() => {
-    setCurrentUrl(new URL(router.asPath, origin).href);
-  }, [router, origin]);
-  return currentUrl;
+    const router = useRouter();
+    const [currentUrl, setCurrentUrl] = useState<string>('');
+    useEffect(() => {
+        const { origin } = nextAbsoluteUrl();
+        setCurrentUrl(new URL(router.asPath, origin).href);
+    }, [router]);
+    return currentUrl;
 };

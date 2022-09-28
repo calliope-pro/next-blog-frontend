@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 
 export const isDarkState = atom<boolean>({
-  key: 'isDarkState',
-  default: true,
+    key: 'isDarkState',
+    default: true,
 });

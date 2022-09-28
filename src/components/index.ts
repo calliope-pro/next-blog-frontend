@@ -3,22 +3,22 @@ export { BlogList } from './BlogList';
 export { Editor } from './Editor';
 export { Footer } from './Footer';
 export {
-  LineIcon,
-  PythonIcon,
-  JavaScriptIcon,
-  DjangoIcon,
-  FastapiIcon,
-  NextjsIcon,
-  NumpyIcon,
-  NuxtIcon,
-  PandasIcon,
-  PytorchIcon,
-  ReactIcon,
-  ScikitLearnIcon,
-  SeleniumIcon,
-  SvelteIcon,
-  TypeScriptIcon,
-  VueIcon,
+    LineIcon,
+    PythonIcon,
+    JavaScriptIcon,
+    DjangoIcon,
+    FastapiIcon,
+    NextjsIcon,
+    NumpyIcon,
+    NuxtIcon,
+    PandasIcon,
+    PytorchIcon,
+    ReactIcon,
+    ScikitLearnIcon,
+    SeleniumIcon,
+    SvelteIcon,
+    TypeScriptIcon,
+    VueIcon,
 } from './Icons';
 export { DashBoard } from './DashBoard';
 export { Loader } from './Loader';

@@ -8,40 +8,40 @@ import { COLORS } from '#src/styles';
 
 // 画面上部のナビゲーションバー
 export const Navbar: React.FC = () => {
-  const navItems: navItem[] = [
-    { label: 'Home', url: '/' },
-    { label: 'Blog', url: '/blogs' },
-  ];
+    const navItems: navItem[] = [
+        { label: 'Home', url: '/' },
+        { label: 'Blog', url: '/blogs' },
+    ];
 
-  return (
-    <AppBar
-      position="sticky"
-      sx={{
-        backgroundColor: COLORS.baseColor,
-        mb: 5,
-      }}
-    >
-      <Container>
-        <Stack
-          direction={{ sm: 'row', xs: 'column' }}
-          justifyContent="space-between"
-          alignItems="center"
+    return (
+        <AppBar
+            position="sticky"
+            sx={{
+                backgroundColor: COLORS.baseColor,
+                mb: 5,
+            }}
         >
-          <Box component="h1">
-            <Link href="/" passHref>
-              <MuiLink color={COLORS.whiteColor} underline="none">
-                CaCaCa Blog
-              </MuiLink>
-            </Link>
-          </Box>
+            <Container>
+                <Stack
+                    direction={{ sm: 'row', xs: 'column' }}
+                    justifyContent="space-between"
+                    alignItems="center"
+                >
+                    <Box component="h1">
+                        <Link href="/" passHref>
+                            <MuiLink color={COLORS.whiteColor} underline="none">
+                                CaCaCa Blog
+                            </MuiLink>
+                        </Link>
+                    </Box>
 
-          <Stack direction="row" justifyContent="space-between">
-            {navItems.map((navItem, idx) => (
-              <NavItem navItem={navItem} key={idx} />
-            ))}
-          </Stack>
-        </Stack>
-      </Container>
-    </AppBar>
-  );
+                    <Stack direction="row" justifyContent="space-between">
+                        {navItems.map((navItem, idx) => (
+                            <NavItem navItem={navItem} key={idx} />
+                        ))}
+                    </Stack>
+                </Stack>
+            </Container>
+        </AppBar>
+    );
 };

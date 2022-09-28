@@ -6,17 +6,17 @@ import Head from 'next/head';
 import { SelfIntroduction } from '#src/components';
 
 const HomePage: NextPage = () => {
-  return (
-    <>
-      <Head>
-        <title>Home</title>
-      </Head>
+    return (
+        <>
+            <Head>
+                <title>Home</title>
+            </Head>
 
-      <ClientLayout>
-        <SelfIntroduction />
-      </ClientLayout>
-    </>
-  );
+            <ClientLayout>
+                <SelfIntroduction />
+            </ClientLayout>
+        </>
+    );
 };
 
 export default HomePage;

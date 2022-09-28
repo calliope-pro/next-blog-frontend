@@ -2,6 +2,7 @@ import Script from 'next/script';
 import { Stack } from '@mui/material';
 
 import { Footer, Navbar } from '#src/components';
+import { COLORS } from '#src/styles';
 
 type ClientLayoutPropType = {
     isAdsExist?: boolean;
@@ -38,7 +39,7 @@ export const ClientLayout: React.FC<ClientLayoutPropType> = ({
         </>
     );
     return (
-        <Stack minHeight="100vh">
+        <Stack minHeight="100vh" sx={{bgcolor: COLORS.mainColor}}>
             <Navbar />
             {children}
             {isAdsExist && AdmaxAd}

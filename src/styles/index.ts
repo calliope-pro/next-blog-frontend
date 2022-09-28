@@ -1,6 +1,6 @@
 export const COLORS = {
     baseColor: '#232946',
-    mainColor: '#b6bfec',
+    mainColor: 'rgb(223, 236, 238)',
     accentColor: '#eebbc3',
     accentDarkColor: '#ee7587',
     whiteColor: '#fffffe',

@@ -15,9 +15,24 @@ function MyApp({ Component, pageProps }: AppProps) {
                     titleTemplate="%s | CaCaCa Blog"
                     defaultTitle="CaCaCa Blog"
                     canonical={`https://cacaca-blog.vercel.app${router.asPath}`}
+                    additionalLinkTags={[
+                        {
+                            rel: 'apple-touch-icon',
+                            href: '/favicon.ico',
+                            sizes: '76x76',
+                        },
+                    ]}
                     openGraph={{
                         type: 'website',
-                        images: [{ url: '/favicon.ico', alt: 'favicon' }],
+                        images: [
+                            {
+                                url: '/favicon.ico',
+                                width: 800,
+                                height: 600,
+                                alt: 'Logo',
+                            },
+                        ],
+                        site_name: 'CaCaCa Blog',
                     }}
                 />
                 <Component {...pageProps} />

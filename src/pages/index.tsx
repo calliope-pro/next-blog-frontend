@@ -1,17 +1,14 @@
 import { ClientLayout } from '#src/layouts/client';
 import type { NextPage } from 'next';
 
-import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 import { SelfIntroduction } from '#src/components';
 
 const HomePage: NextPage = () => {
     return (
         <>
-            <Head>
-                <title>Home</title>
-            </Head>
-
+            <NextSeo title='ホーム'/>
             <ClientLayout>
                 <SelfIntroduction />
             </ClientLayout>

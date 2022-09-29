@@ -4,13 +4,25 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { BlogDetail, Loader } from '#src/components';
 import { ClientLayout } from '#src/layouts/client';
 import { fetchBlog } from '#src/utils/api/blog';
+
+import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 
 const BlogDetailPage: NextPage<{ blog: Blog }> = ({ blog }) => {
     const router = useRouter();
     return (
         <ClientLayout isAdsExist>
-            {router.isFallback ? <Loader /> : <BlogDetail blog={blog} />}
+            {router.isFallback ? (
+                <Loader />
+            ) : (
+                <>
+                    <NextSeo
+                        title={blog.title}
+                        description={blog.description}
+                    />
+                    <BlogDetail blog={blog} />
+                </>
+            )}
         </ClientLayout>
     );
 };

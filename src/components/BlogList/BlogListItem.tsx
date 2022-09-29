@@ -73,6 +73,7 @@ export const BlogListItem: React.FC<{
                                 sx={{
                                     color: COLORS.whiteColor,
                                     backgroundColor: COLORS.accentDarkColor,
+                                    mr:1,
                                 }}
                             />
                         ))

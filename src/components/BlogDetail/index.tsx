@@ -1,5 +1,4 @@
 import dayjs from 'dayjs';
-import Head from 'next/head';
 import { Box, Container, Divider, Typography } from '@mui/material';
 
 import { MarkdownView, ShareButtons } from '#src/components';
@@ -9,11 +8,6 @@ import { Blog } from '#src/types';
 export const BlogDetail: React.FC<{ blog: Blog }> = ({ blog }) => {
     return (
         <>
-            <Head>
-                <title>{blog.title}</title>
-                <meta name="description" content={blog.description} />
-            </Head>
-
             <Container>
                 <ShareButtons />
 

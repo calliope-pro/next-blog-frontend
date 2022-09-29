@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <DefaultSeo
                     titleTemplate="%s | CaCaCa Blog"
                     defaultTitle="CaCaCa Blog"
+                    description="Websites primarily as programming blogs or portfolio"
                     canonical={`https://cacaca-blog.vercel.app${router.asPath}`}
                     additionalLinkTags={[
                         {

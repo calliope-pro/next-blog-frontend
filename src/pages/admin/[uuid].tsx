@@ -4,6 +4,7 @@ import { useRecoilValue } from 'recoil';
 
 import { LoginForm, Editor, Loader } from '#src/components';
 import { isAuthenticatedState } from '#src/atoms/authAtom';
+import { NextSeo } from 'next-seo';
 
 const CreateBlogPage = () => {
     const isAuthed = useRecoilValue(isAuthenticatedState);
@@ -18,9 +19,19 @@ const CreateBlogPage = () => {
     }, [router]);
 
     if (isAuthed) {
-        return <>{uuid ? <Editor uuid={uuid} /> : <Loader />}</>;
+        return (
+            <>
+                <NextSeo title="Dashboard" />
+                {uuid ? <Editor uuid={uuid} /> : <Loader />}
+            </>
+        );
     } else {
-        return <LoginForm />;
+        return (
+            <>
+                <NextSeo title="Login" />
+                <LoginForm />
+            </>
+        );
     }
 };
 

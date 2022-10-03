@@ -3,6 +3,7 @@ import { Stack } from '@mui/material';
 
 import { Footer, Navbar } from '#src/components';
 import { COLORS } from '#src/styles';
+import Head from 'next/head';
 
 type ClientLayoutPropType = {
     isAdsExist?: boolean;
@@ -40,16 +41,19 @@ export const ClientLayout: React.FC<ClientLayoutPropType> = ({
     );
     return (
         <>
-            <Script
-                async
-                src="https://www.googletagmanager.com/gtag/js?id=G-Y838E4H5WF"
-            />
-            <Script
-                id="Google-tag-gtag-js"
-                dangerouslySetInnerHTML={{
-                    __html: "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-Y838E4H5WF');",
-                }}
-            />
+            <Head>
+                {/* eslint-disable-next-line @next/next/next-script-for-ga */}
+                <script
+                    async
+                    src="https://www.googletagmanager.com/gtag/js?id=G-Y838E4H5WF"
+                />
+                <script
+                    id="Google-tag-gtag-js"
+                    dangerouslySetInnerHTML={{
+                        __html: "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-Y838E4H5WF');",
+                    }}
+                />
+            </Head>
 
             <Stack minHeight="100vh" sx={{ bgcolor: COLORS.mainColor }}>
                 <Navbar />

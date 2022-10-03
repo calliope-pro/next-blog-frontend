@@ -27,7 +27,7 @@ export const SelfIntroduction: React.FC = () => {
                 </Box>
 
                 <Typography variant="h3" textAlign="center">
-                    Skill
+                    Skills
                 </Typography>
                 <SkillList />
 

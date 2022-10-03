@@ -1,10 +1,18 @@
 import { BsLine } from 'react-icons/bs';
-import { FaPython, FaReact } from 'react-icons/fa';
+import { FaGitAlt, FaPython, FaReact } from 'react-icons/fa';
 import { IoLogoJavascript, IoLogoVue } from 'react-icons/io5';
 import {
+    SiChakraui,
     SiDjango,
+    SiDocker,
     SiFastapi,
+    SiFigma,
+    SiGithub,
+    SiGithubactions,
+    SiJquery,
+    SiMaterialui,
     SiNextdotjs,
+    SiNotion,
     SiNumpy,
     SiNuxtdotjs,
     SiPandas,
@@ -12,6 +20,9 @@ import {
     SiScikitlearn,
     SiSelenium,
     SiSvelte,
+    SiVisualstudiocode,
+    SiVuetify,
+    SiSwagger,
     SiTypescript,
 } from 'react-icons/si';
 
@@ -55,12 +66,24 @@ export const ScikitLearnIcon: React.FC = () => {
     return <SiScikitlearn fontSize={28} />;
 };
 
+export const JQueryIcon: React.FC = () => {
+    return <SiJquery fontSize={22} />;
+};
+
 export const ReactIcon: React.FC = () => {
-    return <FaReact fontSize={24} />;
+    return <FaReact fontSize={26} />;
 };
 
 export const NextjsIcon: React.FC = () => {
     return <SiNextdotjs fontSize={24} />;
+};
+
+export const ChakraIcon: React.FC = () => {
+    return <SiChakraui fontSize={24} />;
+};
+
+export const MuiIcon: React.FC = () => {
+    return <SiMaterialui fontSize={22} />;
 };
 
 export const SvelteIcon: React.FC = () => {
@@ -75,6 +98,42 @@ export const NuxtIcon: React.FC = () => {
     return <SiNuxtdotjs fontSize={24} />;
 };
 
+export const VuetifyIcon: React.FC = () => {
+    return <SiVuetify fontSize={24} />;
+};
+
 export const TypeScriptIcon: React.FC = () => {
     return <SiTypescript fontSize={22} />;
+};
+
+export const GitIcon: React.FC = () => {
+    return <FaGitAlt fontSize={26} />;
+};
+
+export const GitHubIcon: React.FC = () => {
+    return <SiGithub fontSize={24} />;
+};
+
+export const GitHubActionsIcon: React.FC = () => {
+    return <SiGithubactions fontSize={24} />;
+};
+
+export const DockerIcon: React.FC = () => {
+    return <SiDocker fontSize={26} />;
+};
+
+export const SwaggerIcon: React.FC = () => {
+    return <SiSwagger fontSize={24} />;
+};
+
+export const VScodeIcon: React.FC = () => {
+    return <SiVisualstudiocode fontSize={22} />;
+};
+
+export const NotionIcon: React.FC = () => {
+    return <SiNotion fontSize={24} />;
+};
+
+export const FigmaIcon: React.FC = () => {
+    return <SiFigma fontSize={24} />;
 };

@@ -25,6 +25,7 @@ import {
     TypeScriptIcon,
     VueIcon,
 } from '#src/components';
+import { ChakraIcon, JQueryIcon, MuiIcon, VuetifyIcon } from '#src/components/Icons';
 
 export const ProgrammingSkillList: React.FC = () => {
     const [openPython, setOpenPython] = useState(false);
@@ -115,6 +116,12 @@ export const ProgrammingSkillList: React.FC = () => {
                 <List component="div" disablePadding>
                     <ListItem sx={{ pl: 4 }}>
                         <ListItemIcon>
+                            <JQueryIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="jQuery" />
+                    </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
                             <TypeScriptIcon />
                         </ListItemIcon>
                         <ListItemText primary="TypeScript" />
@@ -133,6 +140,18 @@ export const ProgrammingSkillList: React.FC = () => {
                     </ListItem>
                     <ListItem sx={{ pl: 4 }}>
                         <ListItemIcon>
+                            <ChakraIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Chakra UI" />
+                    </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
+                            <MuiIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Material UI" />
+                    </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
                             <SvelteIcon />
                         </ListItemIcon>
                         <ListItemText primary="Svelte / SvelteKit" />
@@ -148,6 +167,12 @@ export const ProgrammingSkillList: React.FC = () => {
                             <NuxtIcon />
                         </ListItemIcon>
                         <ListItemText primary="Nuxt" />
+                    </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
+                            <VuetifyIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Vuetify" />
                     </ListItem>
                 </List>
             </Collapse>

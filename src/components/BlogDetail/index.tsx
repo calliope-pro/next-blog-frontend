@@ -12,7 +12,7 @@ export const BlogDetail: React.FC<{ blog: Blog }> = ({ blog }) => {
                 <ShareButtons />
 
                 <Box paddingTop={3} textAlign="center">
-                    <Typography variant="h2">{blog.title}</Typography>
+                    <Typography variant="h3">{blog.title}</Typography>
                     <Typography variant="h5">{blog.sub_title}</Typography>
                 </Box>
 

@@ -39,11 +39,24 @@ export const ClientLayout: React.FC<ClientLayoutPropType> = ({
         </>
     );
     return (
-        <Stack minHeight="100vh" sx={{bgcolor: COLORS.mainColor}}>
-            <Navbar />
-            {children}
-            {isAdsExist && AdmaxAd}
-            <Footer />
-        </Stack>
+        <>
+            <Script
+                async
+                src="https://www.googletagmanager.com/gtag/js?id=G-Y838E4H5WF"
+            />
+            <Script
+                id="Google-tag-gtag-js"
+                dangerouslySetInnerHTML={{
+                    __html: "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-Y838E4H5WF');",
+                }}
+            />
+
+            <Stack minHeight="100vh" sx={{ bgcolor: COLORS.mainColor }}>
+                <Navbar />
+                {children}
+                {isAdsExist && AdmaxAd}
+                <Footer />
+            </Stack>
+        </>
     );
 };

@@ -48,6 +48,5 @@ export async function adminPostCategory(category: Category) {
 
 export async function postContactForm(content: ContactContentType) {
     const REQUEST_URL = new URL('/api/contact-form/', BACKEND_ORIGIN).href;
-    const response: AxiosResponse = await axios.post(REQUEST_URL, content);
-    return response.status;
+    await axios.post(REQUEST_URL, content);
 }

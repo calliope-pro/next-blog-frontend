@@ -40,7 +40,7 @@ export const BlogListItem: React.FC<{
             onMouseLeave={() => setIsHovering(false)}
         >
             <Container>
-                <Box component="h1" paddingTop="15px" margin={0}>
+                <Box component="h2" paddingTop="15px" margin={0}>
                     <Link href={getBlogUrl(blog.uuid)} passHref>
                         <MuiLink underline="hover" color={COLORS.baseColor}>
                             {blog.title}

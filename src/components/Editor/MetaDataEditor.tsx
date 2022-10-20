@@ -101,8 +101,8 @@ export const MetaDataEditor: React.FC = () => {
             />
 
             <TextField
-                disabled
                 label="Description(for SEO) deprecated."
+                InputProps={{ readOnly: true }}
                 defaultValue={blogData.blogDataContextValue.description}
                 type="text"
                 fullWidth

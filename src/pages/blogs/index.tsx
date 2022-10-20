@@ -11,7 +11,7 @@ const BlogListPage: NextPage = () => {
     const { data: blogs } = useBlogListState();
     return (
         <>
-            <NextSeo title="ブログ一覧" description="List of all blogs" />
+            <NextSeo title="ブログ一覧" description="CaCaCa Blogのブログ一覧" />
             <ClientLayout isAdsExist>
                 <Suspense fallback={<Loader />}>
                     <BlogList blogs={blogs ?? []} />

@@ -3,7 +3,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
 import { BlogDetail, Loader } from '#src/components';
 import { ClientLayout } from '#src/layouts/client';
-import { fetchBlog } from '#src/utils/api/blog';
+import { fetchBlogByUuid } from '#src/utils/api/blog';
 
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
@@ -38,7 +38,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
     try {
-        const blog = await fetchBlog(context.params?.uuid as string);
+        const blog = await fetchBlogByUuid(context.params?.uuid as string);
         return {
             props: { blog },
             revalidate: 60,

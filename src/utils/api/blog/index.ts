@@ -19,7 +19,7 @@ export async function fetchBlogList(onlyPublished = true) {
     return blogList;
 }
 
-export async function fetchBlog(id: string) {
+export async function fetchBlogByUuid(id: string) {
     const REQUEST_URL = new URL(`/api/blogs/${id}`, BACKEND_ORIGIN).href;
     const response: AxiosResponse<Blog> = await axios.get(REQUEST_URL);
     return response.data;

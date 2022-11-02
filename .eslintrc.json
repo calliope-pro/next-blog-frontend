@@ -17,6 +17,7 @@
     "no-var": "error",
     "prefer-const": "error",
     "no-console": "warn",
+    "no-restricted-imports": ["error", {"patterns": ["../"]}],
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-misused-promises": [
       "error",

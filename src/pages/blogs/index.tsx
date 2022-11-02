@@ -1,23 +1,24 @@
 import type { NextPage } from 'next';
 
-import Head from 'next/head';
-
-import { BlogList } from '#src/components';
+import { BlogList, Loader } from '#src/components';
 import { ClientLayout } from '#src/layouts/client';
+import { useBlogListState } from '#src/utils/hooks';
+
+import { Suspense } from 'react';
+import { NextSeo } from 'next-seo';
 
 const BlogListPage: NextPage = () => {
-  return (
-    <>
-      <Head>
-        <title>ブログ一覧</title>
-        <meta name="description" content="The list of all blogs" />
-      </Head>
-
-      <ClientLayout>
-        <BlogList />
-      </ClientLayout>
-    </>
-  );
+    const { data: blogs } = useBlogListState();
+    return (
+        <>
+            <NextSeo title="ブログ一覧" description="CaCaCa Blogのブログ一覧" />
+            <ClientLayout isAdsExist>
+                <Suspense fallback={<Loader />}>
+                    <BlogList blogs={blogs ?? []} />
+                </Suspense>
+            </ClientLayout>
+        </>
+    );
 };
 
 export default BlogListPage;

@@ -4,28 +4,28 @@ import { useState, useContext, useRef, ClipboardEvent } from 'react';
 import { Alert, Box, Button, Snackbar, TextareaAutosize } from '@mui/material';
 
 import { blogDataContext } from './contexts';
-import { adminPostBlog, adminPostImageBase64URL } from '#src/utils/backendApi';
+import { adminPostBlog, adminPostImageBase64URL } from '#src/utils/api/auth';
 
 export const MarkdownEditor: React.FC = () => {
-  // saveされたか
-  const [isSaved, setIsSaved] = useState(false);
+    // saveされたか
+    const [isSaved, setIsSaved] = useState(false);
 
-  // markdown textareaの参照
-  const contentRef = useRef<HTMLTextAreaElement>(null!);
+    // markdown textareaの参照
+    const contentRef = useRef<HTMLTextAreaElement>(null!);
 
-  const blogData = useContext(blogDataContext);
+    const blogData = useContext(blogDataContext);
 
-  // バックエンドへ保存
-  const saveBlogData = async () => {
-    if (blogData) {
-      blogData.setBlogDataContextValue((prev) => {
-        prev.content = contentRef.current.value;
-        return prev;
-      });
-      await adminPostBlog(blogData.blogDataContextValue);
-      setIsSaved(() => true);
-    }
-  };
+    // バックエンドへ保存
+    const saveBlogData = async () => {
+        if (blogData) {
+            blogData.setBlogDataContextValue((prev) => {
+                prev.content = contentRef.current.value;
+                return prev;
+            });
+            await adminPostBlog(blogData.blogDataContextValue);
+            setIsSaved(() => true);
+        }
+    };
 
   const uploadImageBase64URL = (e: ClipboardEvent<HTMLTextAreaElement>) => {
     const file = e.clipboardData.files[0];
@@ -81,21 +81,21 @@ export const MarkdownEditor: React.FC = () => {
     }
   };
 
-  return (
-    <Box>
-      <Snackbar
-        open={isSaved}
-        autoHideDuration={6000}
-        onClose={() => setIsSaved(() => false)}
-      >
-        <Alert
-          variant="filled"
-          onClose={() => setIsSaved(() => false)}
-          severity="success"
-        >
-          Saved Successfully!
-        </Alert>
-      </Snackbar>
+    return (
+        <Box>
+            <Snackbar
+                open={isSaved}
+                autoHideDuration={6000}
+                onClose={() => setIsSaved(() => false)}
+            >
+                <Alert
+                    variant="filled"
+                    onClose={() => setIsSaved(() => false)}
+                    severity="success"
+                >
+                    Saved Successfully!
+                </Alert>
+            </Snackbar>
 
       <TextareaAutosize
         className={style.mdEditor}
@@ -107,9 +107,9 @@ export const MarkdownEditor: React.FC = () => {
         onPaste={uploadImageBase64URL}
       />
 
-      <Button onClick={saveBlogData} variant="contained" color="error">
-        save
-      </Button>
-    </Box>
-  );
+            <Button onClick={saveBlogData} variant="contained" color="error">
+                save
+            </Button>
+        </Box>
+    );
 };

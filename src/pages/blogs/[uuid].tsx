@@ -1,25 +1,49 @@
-import type { NextPage } from 'next';
+import type { Blog } from '#src/types';
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 
+import { BlogDetail, Loader } from '#src/components';
+import { ClientLayout } from '#src/layouts/client';
+import { fetchBlogByUuid } from '#src/utils/api/blog';
+
+import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 
-import { BlogDetail, Navbar } from '../../components';
-
-const BlogDetailPage: NextPage = () => {
-  const router = useRouter();
-  const [uuid, setUuid] = useState<string | undefined>(undefined);
-  useEffect(() => {
-    if (router.isReady) {
-      const uuid = router.query.uuid as string;
-      setUuid(uuid);
-    }
-  }, [router]);
-  return (
-    <>
-      <Navbar />
-      <>{uuid && <BlogDetail uuid={uuid} />}</>
-    </>
-  );
+const BlogDetailPage: NextPage<{ blog: Blog }> = ({ blog }) => {
+    const router = useRouter();
+    return (
+        <ClientLayout isAdsExist>
+            {router.isFallback ? (
+                <Loader />
+            ) : (
+                <>
+                    <NextSeo
+                        title={blog.title}
+                        description={blog.sub_title}
+                    />
+                    <BlogDetail blog={blog} />
+                </>
+            )}
+        </ClientLayout>
+    );
 };
 
 export default BlogDetailPage;
+
+export const getStaticPaths: GetStaticPaths = () => {
+    return {
+        paths: [],
+        fallback: true,
+    };
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
+    try {
+        const blog = await fetchBlogByUuid(context.params?.uuid as string);
+        return {
+            props: { blog },
+            revalidate: 60,
+        };
+    } catch (error) {
+        return { notFound: true };
+    }
+};

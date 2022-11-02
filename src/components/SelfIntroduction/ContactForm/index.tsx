@@ -133,7 +133,7 @@ export const ContactForm = () => {
                     }}
                     type="submit"
                 >
-                    送信
+                    {isLoading ? '送信中・・・' :'送信'}
                 </Button>
             </Box>
         </>

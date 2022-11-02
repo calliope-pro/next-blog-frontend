@@ -101,7 +101,8 @@ export const MetaDataEditor: React.FC = () => {
             />
 
             <TextField
-                label="Description(for SEO)"
+                label="Description(for SEO) deprecated."
+                InputProps={{ readOnly: true }}
                 defaultValue={blogData.blogDataContextValue.description}
                 type="text"
                 fullWidth
@@ -161,7 +162,6 @@ export const MetaDataEditor: React.FC = () => {
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <Box sx={{ display: 'flex' }}>
                     <MobileDatePicker
-                        disableFuture={true}
                         label="作成日時"
                         value={watch(
                             'created_at',
@@ -181,7 +181,6 @@ export const MetaDataEditor: React.FC = () => {
                     />
 
                     <MobileDateTimePicker
-                        disableFuture={true}
                         label="更新日時"
                         value={watch(
                             'updated_at',

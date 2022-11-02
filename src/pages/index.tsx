@@ -10,7 +10,7 @@ const HomePage: NextPage = () => {
         <>
             <NextSeo
                 title="ホーム"
-                description="Home page of this site. Describes this site and introduces the administrator."
+                description="CaCaCa Blogのホームページになります。サイトや管理人の紹介、問い合わせフォームがあります。"
             />
             <ClientLayout>
                 <SelfIntroduction />

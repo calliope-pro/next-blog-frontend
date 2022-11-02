@@ -33,3 +33,11 @@ export type Category = {
     key: number;
     label: string;
 };
+
+export type ImageBase64URL = {
+  url: string;
+};
+
+export type ImageResponse = {
+  name: string;
+};

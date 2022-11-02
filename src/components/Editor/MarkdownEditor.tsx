@@ -1,10 +1,10 @@
 import style from './md-editor.module.scss';
 
-import { useState, useContext, useRef } from 'react';
+import { useState, useContext, useRef, ClipboardEvent } from 'react';
 import { Alert, Box, Button, Snackbar, TextareaAutosize } from '@mui/material';
 
 import { blogDataContext } from './contexts';
-import { adminPostBlog } from '#src/utils/api/auth';
+import { adminPostBlog, adminPostImageBase64URL } from '#src/utils/api/auth';
 
 export const MarkdownEditor: React.FC = () => {
     // saveされたか
@@ -24,6 +24,27 @@ export const MarkdownEditor: React.FC = () => {
             });
             await adminPostBlog(blogData.blogDataContextValue);
             setIsSaved(() => true);
+        }
+    };
+
+    const uploadImageBase64URL = (e: ClipboardEvent<HTMLTextAreaElement>) => {
+        const file = e.clipboardData.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onloadend = async () => {
+                const res = await adminPostImageBase64URL({
+                    url: reader.result as string,
+                });
+                const cursorPosition = contentRef.current.selectionStart;
+                const body = contentRef.current.value;
+                contentRef.current.value =
+                    body.substring(0, cursorPosition) +
+                    `![画像](${
+                        process.env.NEXT_PUBLIC_BACKEND_ORIGIN as string
+                    }/api/images/${res.data.name})` +
+                    body.substring(cursorPosition);
+            };
         }
     };
 
@@ -91,6 +112,7 @@ export const MarkdownEditor: React.FC = () => {
                 ref={contentRef}
                 defaultValue={blogData?.blogDataContextValue.content}
                 onKeyDown={handleShortcutKey}
+                onPaste={uploadImageBase64URL}
             />
 
             <Button onClick={saveBlogData} variant="contained" color="error">

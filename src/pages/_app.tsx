@@ -14,8 +14,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <DefaultSeo
                     titleTemplate="%s | CaCaCa Blog"
                     defaultTitle="CaCaCa Blog"
-                    description="Websites primarily as programming blogs or portfolio"
-                    canonical={`https://cacaca-blog.vercel.app${router.asPath}`}
+                    description="主にプログラミングに関することを取り上げるブログ兼ポートフォリオ"
+                    canonical={`${
+                        process.env.NEXT_PUBLIC_FRONTEND_ORIGIN as string
+                    }${router.asPath}`}
                     additionalLinkTags={[
                         {
                             rel: 'apple-touch-icon',

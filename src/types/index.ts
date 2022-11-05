@@ -35,9 +35,9 @@ export type Category = {
 };
 
 export type ImageBase64URL = {
-  url: string;
+    url: string;
 };
 
 export type ImageResponse = {
-  name: string;
+    name: string;
 };

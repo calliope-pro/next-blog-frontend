@@ -25,7 +25,12 @@ import {
     TypeScriptIcon,
     VueIcon,
 } from '#src/components';
-import { ChakraIcon, JQueryIcon, MuiIcon, VuetifyIcon } from '#src/components/Icons';
+import {
+    ChakraIcon,
+    JQueryIcon,
+    MuiIcon,
+    VuetifyIcon,
+} from '#src/components/Icons';
 
 export const ProgrammingSkillList: React.FC = () => {
     const [openPython, setOpenPython] = useState(false);

@@ -16,10 +16,7 @@ const BlogDetailPage: NextPage<{ blog: Blog }> = ({ blog }) => {
                 <Loader />
             ) : (
                 <>
-                    <NextSeo
-                        title={blog.title}
-                        description={blog.sub_title}
-                    />
+                    <NextSeo title={blog.title} description={blog.sub_title} />
                     <BlogDetail blog={blog} />
                 </>
             )}

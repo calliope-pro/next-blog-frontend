@@ -27,7 +27,7 @@ export const ToolList: React.FC = () => {
                 <>
                     <ListItemButton
                         onClick={() => setOpen((prev) => !prev)}
-                        sx={{ pl:0, py:0 }}
+                        sx={{ pl: 0, py: 0 }}
                     >
                         <ListItemText
                             primary={

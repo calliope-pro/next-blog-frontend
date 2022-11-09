@@ -10,6 +10,7 @@ import remarkGfm from 'remark-gfm';
 import { Box, Link as MuiLink } from '@mui/material';
 
 import { CodeContainer } from './CodeContainer';
+import { LinkPreview } from '#src/components/LinkPreview';
 import { isDarkState } from '#src/atoms/codeStyleAtom';
 
 export const MarkdownView: React.FC<{ body: string }> = ({ body }) => {
@@ -71,21 +72,11 @@ export const MarkdownView: React.FC<{ body: string }> = ({ body }) => {
                             objectFit="contain"
                         />
                     ),
-                    a: ({ children, href }) => {
-                        const isExternalUrl = href?.startsWith('http');
-                        return (
-                            <Link passHref href={href as string}>
-                                <MuiLink
-                                    target={
-                                        isExternalUrl ? '_blank' : undefined
-                                    }
-                                    rel={isExternalUrl ? 'noopener' : undefined}
-                                >
-                                    {children}
-                                </MuiLink>
-                            </Link>
-                        );
-                    },
+                    a: ({ children, href }) => (
+                        <LinkPreview href={href as string}>
+                            {children}
+                        </LinkPreview>
+                    ),
                 }}
             >
                 {body}

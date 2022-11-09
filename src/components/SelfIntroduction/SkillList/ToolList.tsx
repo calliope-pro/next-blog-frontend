@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import { Divider, ListItemButton, Typography } from '@mui/material';
-import { ListItemIcon } from '@material-ui/core';
+import { Divider, ListItemButton, ListItemIcon, Typography } from '@mui/material';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
 import {

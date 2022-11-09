@@ -1,8 +1,6 @@
-import nextAbsoluteUrl from 'next-absolute-url';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { ReactNode, useState, useEffect } from 'react';
+import { ReactNode } from 'react';
 import {
     Box,
     CircularProgress,
@@ -32,17 +30,8 @@ export const LinkPreview: React.FC<{
     href: string;
 }> = ({ children, href }) => {
     const isExternalUrl = href?.startsWith('http');
-    const router = useRouter();
-    const [origin, setOrigin] = useState<string>('');
-    useEffect(() => {
-        if (router.isReady) {
-            setOrigin(nextAbsoluteUrl().origin);
-        }
-    }, [router]);
-    console.log(origin);
-    // const { data, error } = useFetchLinkPreviewHook(href);
     const { data, error } = useFetchLinkPreviewHook(
-        isExternalUrl ? href : new URL(href, origin).href,
+        isExternalUrl ? href : new URL(href, process.env.NEXT_PUBLIC_FRONTEND_ORIGIN).href,
     );
 
     return (

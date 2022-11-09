@@ -26,7 +26,10 @@ export default async function handler(
         const browser = await puppeteer.launch(options);
         const page = await browser.newPage();
         await page.goto(url);
-        const image = await page.screenshot({ encoding: 'base64' });
+        const image = await page.screenshot({
+            encoding: 'base64',
+            type: 'jpeg',
+        });
         await browser.close();
         res.status(200).json({
             image,

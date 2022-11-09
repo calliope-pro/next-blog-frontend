@@ -1110,17 +1110,6 @@ core-js-pure@^3.20.2:
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.20.2.tgz#5d263565f0e34ceeeccdc4422fae3e84ca6b8c0f"
   integrity sha512-CmWHvSKn2vNL6p6StNp1EmMIfVY/pqn3JLAjfZQ8WZGPOlGoO92EkX9/Mk81i6GxvoPXjUqEQnpM3rJ5QxxIOg==
 
-cosmiconfig@7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-7.0.1.tgz#714d756522cace867867ccb4474c5d01bbae5d6d"
-  integrity sha512-a1YWNUV2HwGimB7dU2s1wUMurNKjpx60HxBB6xUM8Re+2s1g1IIfJvFR0/iCF+XHdE0GMTKTuLR32UQff4TEyQ==
-  dependencies:
-    "@types/parse-json" "^4.0.0"
-    import-fresh "^3.2.1"
-    parse-json "^5.0.0"
-    path-type "^4.0.0"
-    yaml "^1.10.0"
-
 cosmiconfig@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-6.0.0.tgz#da4fee853c52f6b1e6935f41c1a2fc50bd4a9982"
@@ -3030,7 +3019,7 @@ prismjs@~1.25.0:
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.25.0.tgz#6f822df1bdad965734b310b315a23315cf999756"
   integrity sha512-WCjJHl1KEWbnkQom1+SzftbtXMKQoezOCYs5rECqMN+jP+apI7ftoflyqigqzopSO3hMhTEb0mFClA8lkolgEg==
 
-progress@2.0.3, progress@^2.0.0:
+progress@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
@@ -3074,7 +3063,7 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-puppeteer-core@19.2.2, puppeteer-core@^19.2.2:
+puppeteer-core@^19.2.2:
   version "19.2.2"
   resolved "https://registry.yarnpkg.com/puppeteer-core/-/puppeteer-core-19.2.2.tgz#a9b7b25099d87d550c224c660c205b7ebdd03eb4"
   integrity sha512-faojf+1pZ/tHXSr4x1q+9MVd9FrL3rpdbC0w7qN7MNClMoLuCvMbpR4vzcjoiJYgclt1n+SOPUOmHQViTw6frw==
@@ -3089,18 +3078,6 @@ puppeteer-core@19.2.2, puppeteer-core@^19.2.2:
     tar-fs "2.1.1"
     unbzip2-stream "1.4.3"
     ws "8.10.0"
-
-puppeteer@^19.2.2:
-  version "19.2.2"
-  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-19.2.2.tgz#e6f7bc089ac9bffea78b2f792bf3affd93e16803"
-  integrity sha512-m1T5Mog5qu5+dMBptWYTn6pXRdnFbydbVUCthqwbfd8/kOiMlzZBR9ywjX79LpvI1Sj+/z8+FKeIsjnMul8ZYA==
-  dependencies:
-    cosmiconfig "7.0.1"
-    devtools-protocol "0.0.1056733"
-    https-proxy-agent "5.0.1"
-    progress "2.0.3"
-    proxy-from-env "1.1.0"
-    puppeteer-core "19.2.2"
 
 queue-microtask@^1.2.2:
   version "1.2.3"
@@ -3811,7 +3788,7 @@ yallist@^4.0.0:
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-4.0.0.tgz#9bb92790d9c0effec63be73519e11a35019a3a72"
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
 
-yaml@^1.10.0, yaml@^1.7.2:
+yaml@^1.7.2:
   version "1.10.2"
   resolved "https://registry.yarnpkg.com/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==

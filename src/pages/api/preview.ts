@@ -8,9 +8,26 @@ export default async function handler(
 ) {
     try {
         const url = req.query.url as string;
-
-        const image = await getImageBase64(url);
-
+        const options = process.env.AWS_REGION
+            ? {
+                  args: chromium.args,
+                  executablePath: await chromium.executablePath,
+                  headless: chromium.headless,
+              }
+            : {
+                  args: [],
+                  executablePath:
+                      process.platform === 'win32'
+                          ? 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
+                          : process.platform === 'linux'
+                          ? '/usr/bin/google-chrome'
+                          : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+              };
+        const browser = await puppeteer.launch(options);
+        const page = await browser.newPage();
+        await page.goto(url);
+        const image = await page.screenshot({ encoding: 'base64' });
+        await browser.close();
         res.status(200).json({
             image,
         });
@@ -20,16 +37,3 @@ export default async function handler(
         });
     }
 }
-
-const getImageBase64 = async (url: string) => {
-    const browser = await puppeteer.launch({
-        args: chromium.args,
-        executablePath: await chromium.executablePath,
-        headless: chromium.headless,
-    });
-    const page = await browser.newPage();
-    await page.goto(url);
-    const image = await page.screenshot({ encoding: 'base64' });
-    await browser.close();
-    return image;
-};

@@ -20,7 +20,7 @@
     "@types/uuid": "^8.3.3",
     "add": "^2.0.6",
     "axios": "^0.24.0",
-    "chrome-aws-lambda": "^10.1.0",
+    "chrome-aws-lambda": "~9.1.0",
     "dayjs": "^1.10.7",
     "lodash": "^4.17.21",
     "markdown-to-txt": "^2.0.0",

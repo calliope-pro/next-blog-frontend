@@ -23,7 +23,7 @@ export default async function handler(
                           ? '/usr/bin/google-chrome'
                           : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
               };
-        await chromium.font('https://s3.ap-northeast-2.amazonaws.com/fonts/webfont.ttf')
+        await chromium.font('https://fonts.googleapis.com/css?family=Sawarabi+Mincho')
         const browser = await puppeteer.launch(options);
         const page = await browser.newPage();
         await page.goto(url);

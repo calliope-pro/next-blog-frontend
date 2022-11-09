@@ -27,12 +27,12 @@ export default async function handler(
         const page = await browser.newPage();
         await page.goto(url);
         const image = await page.screenshot({
-            encoding: 'base64',
+            encoding: 'binary',
             type: 'jpeg',
         });
         await browser.close();
         res.status(200).json({
-            image,
+            image: Buffer.from(image).toString('base64'),
         });
     } catch (error) {
         res.status(500).json({

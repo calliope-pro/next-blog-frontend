@@ -25,9 +25,9 @@ export async function adminLogin(userData: User) {
 }
 
 export async function adminVerifyTokens() {
-    const REQUEST_URL = new URL('/api/admin/tokens/verify/', BACKEND_ORIGIN)
+    const REQUEST_URL = new URL('/api/admin/token/verify/', BACKEND_ORIGIN)
         .href;
-    const response: AxiosResponse = await axiosWithCredentials.post(
+    const response: AxiosResponse<boolean> = await axiosWithCredentials.get(
         REQUEST_URL,
     );
     return response;

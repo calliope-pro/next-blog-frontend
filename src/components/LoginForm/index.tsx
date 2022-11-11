@@ -7,9 +7,14 @@ import { FormControl, InputLabel, Input, Button, Box } from '@mui/material';
 
 import { isAuthenticatedState } from '#src/atoms/authAtom';
 import { adminLogin } from '#src/utils/api/auth';
+import { useVerifyAuthStateHook } from '#src/utils/hooks';
 
 export const LoginForm: React.FC = () => {
     const setIsAuthed = useSetRecoilState(isAuthenticatedState);
+    const { data } = useVerifyAuthStateHook();
+    if (data) {
+        setIsAuthed(() => true);
+    }
 
     // Userに関してのform設定
     const { register, handleSubmit } = useForm<

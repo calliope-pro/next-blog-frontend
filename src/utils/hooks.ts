@@ -8,6 +8,14 @@ import useSWR from 'swr';
 import { fetchBlogList, fetchCategories } from '#src/utils/api/blog';
 import axios from 'axios';
 import { MqlResponseData } from '@microlink/mql';
+import { adminVerifyTokens } from './api/auth';
+
+export const useVerifyAuthStateHook = () => {
+    return useSWR<boolean, Error>(
+        'authState',
+        async () => (await adminVerifyTokens()).data,
+    );
+};
 
 export const useBlogListState = (onlyPublished = true) => {
     return useSWR<Blog[], Error>(

@@ -27,10 +27,13 @@ export const LinkCard: React.FC<{
         <Link passHref href={href}>
             {data && !error ? (
                 <Card
-                    sx={{ display: 'inline-block' }}
+                    component="a"
+                    target={isExternalUrl ? '_blank' : undefined}
+                    rel={isExternalUrl ? 'noopener' : undefined}
                     elevation={isHovering ? 10 : 2}
                     onMouseEnter={() => setIsHovering(true)}
                     onMouseLeave={() => setIsHovering(false)}
+                    sx={{ display: 'inline-block', textDecoration: 'none' }}
                 >
                     <CardActionArea
                         sx={{

@@ -10,6 +10,7 @@ module.exports = {
     ENV_SECURITY_CODE: process.env.ENV_SECURITY_CODE
   },
   images: {
-    domains: [new URL(process.env.NEXT_PUBLIC_BACKEND_ORIGIN).hostname]
+    remotePatterns: [{ protocol: 'https', hostname: '**' }, { protocol: 'http', hostname: '**' }]
+    // domains: [new URL(process.env.NEXT_PUBLIC_BACKEND_ORIGIN).hostname]
   },
 }

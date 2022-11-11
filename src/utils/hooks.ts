@@ -7,6 +7,7 @@ import useSWR from 'swr';
 
 import { fetchBlogList, fetchCategories } from '#src/utils/api/blog';
 import axios from 'axios';
+import { MqlResponseData } from '@microlink/mql';
 
 export const useBlogListState = (onlyPublished = true) => {
     return useSWR<Blog[], Error>(
@@ -31,11 +32,8 @@ export const useCurrentAbsUrl = () => {
 };
 
 export const useFetchLinkPreviewHook = (url: string) => {
-    return useSWR<string, Error>(url, async (url: string) => {
-        const { image } = (await axios.get('/api/preview', { params: { url } }))
-            .data as {
-            image: string;
-        };
-        return image;
+    return useSWR<MqlResponseData, Error>(url, async (url: string) => {
+        return (await axios.get('/api/preview', { params: { url } }))
+            .data as MqlResponseData;
     });
 };

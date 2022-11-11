@@ -9,7 +9,7 @@ import remarkGfm from 'remark-gfm';
 import { Box } from '@mui/material';
 
 import { CodeContainer } from './CodeContainer';
-import { LinkPreview } from '#src/components/LinkPreview';
+import { LinkCard } from '#src/components/LinkCard';
 import { isDarkState } from '#src/atoms/codeStyleAtom';
 
 export const MarkdownView: React.FC<{ body: string }> = ({ body }) => {
@@ -72,9 +72,7 @@ export const MarkdownView: React.FC<{ body: string }> = ({ body }) => {
                         />
                     ),
                     a: ({ children, href }) => (
-                        <LinkPreview href={href as string}>
-                            {children}
-                        </LinkPreview>
+                        <LinkCard href={href as string}>{children}</LinkCard>
                     ),
                 }}
             >

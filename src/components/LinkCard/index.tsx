@@ -20,7 +20,7 @@ export const LinkCard: React.FC<{
     const { data, error } = useFetchLinkPreviewHook(
         isExternalUrl
             ? href
-            : new URL('/favicon', process.env.NEXT_PUBLIC_FRONTEND_ORIGIN).href,
+            : new URL(href, process.env.NEXT_PUBLIC_FRONTEND_ORIGIN).href,
     );
 
     return (

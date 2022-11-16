@@ -1,7 +1,7 @@
 export const COLORS = {
-    baseColor: '#232946',
+    baseColor: 'rgb(35, 41, 70, 0.9)',
     mainColor: 'rgb(193, 202, 243)',
-    accentColor: '#eebbc3',
+    accentColor: 'rgb(238, 187, 195)',
     accentDarkColor: 'rgb(223, 99, 117)',
-    whiteColor: '#fffffe',
+    whiteColor: 'rgb(252, 252, 249)',
 };

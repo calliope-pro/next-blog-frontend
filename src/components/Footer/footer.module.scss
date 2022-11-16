@@ -1,0 +1,7 @@
+@use '../../../styles/globals.module.scss' as g;
+
+.blur-link:hover {
+    text-shadow: 0 0 30px g.$accent-color;
+    color: g.$accent-color;
+    font-size: 105%;
+}

@@ -33,7 +33,10 @@ export const LinkCard: React.FC<{
                     elevation={isHovering ? 10 : 2}
                     onMouseEnter={() => setIsHovering(true)}
                     onMouseLeave={() => setIsHovering(false)}
-                    sx={{ display: 'inline-block', textDecoration: 'none' }}
+                    sx={{
+                        display: 'inline-block',
+                        textDecoration: 'none',
+                    }}
                 >
                     <CardActionArea
                         sx={{

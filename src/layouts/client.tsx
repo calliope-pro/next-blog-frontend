@@ -55,7 +55,7 @@ export const ClientLayout: React.FC<ClientLayoutPropType> = ({
                 />
             </Head>
 
-            <Stack minHeight="100vh" sx={{ bgcolor: COLORS.mainColor }}>
+            <Stack minHeight="100vh" sx={{ bgcolor: COLORS.mainColor }} justifyContent="space-between">
                 <Navbar />
                 {children}
                 {isAdsExist && AdmaxAd}

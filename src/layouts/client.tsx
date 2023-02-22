@@ -14,7 +14,7 @@ export const ClientLayout: React.FC = ({ children }) => {
         if (router.isReady) {
             setKey(router.asPath);
         }
-    }, [router]);
+    }, [router.isReady, router.asPath]);
     return (
         <>
             <Script

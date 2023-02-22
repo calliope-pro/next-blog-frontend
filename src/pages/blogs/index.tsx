@@ -12,7 +12,7 @@ const BlogListPage: NextPage = () => {
     return (
         <>
             <NextSeo title="ブログ一覧" description="CaCaCa Blogのブログ一覧" />
-            <ClientLayout isAdsExist>
+            <ClientLayout>
                 <Suspense fallback={<Loader />}>
                     <BlogList blogs={blogs ?? []} />
                 </Suspense>

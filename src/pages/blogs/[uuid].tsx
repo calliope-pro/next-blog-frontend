@@ -11,7 +11,7 @@ import { useRouter } from 'next/router';
 const BlogDetailPage: NextPage<{ blog: Blog }> = ({ blog }) => {
     const router = useRouter();
     return (
-        <ClientLayout isAdsExist>
+        <ClientLayout>
             {router.isFallback ? (
                 <Loader />
             ) : (

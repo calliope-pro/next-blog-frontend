@@ -32,5 +32,5 @@ export async function fetchCategories() {
     categoryList.forEach((value) => {
         value.key = Number(value.key);
     });
-    return categoryList;
+    return categoryList.sort((a, b) => a.key - b.key);
 }

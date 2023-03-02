@@ -26,6 +26,7 @@ const FILE_EXTENSIONS: { [lang: string]: string } = {
 };
 
 type PropType = {
+    children: React.ReactNode;
     filename?: string;
     fileExtension: string;
     node: Element;

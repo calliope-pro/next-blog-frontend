@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
                             mb={2}
                             sx={{
                                 background:
-                                    'linear-gradient(to left, rgb(238, 187, 195), rgb(223, 99, 117))',
+                                    'linear-gradient(to left, rgb(242, 191, 226), rgb(223, 99, 117))',
                                 backgroundClip: 'text',
                                 color: 'transparent',
                             }}
@@ -84,7 +84,7 @@ export const Footer: React.FC = () => {
                             mb={2}
                             sx={{
                                 background:
-                                    'linear-gradient(to left, rgb(238, 187, 195), rgb(223, 99, 117))',
+                                    'linear-gradient(to left, rgb(242, 191, 226), rgb(223, 99, 117))',
                                 backgroundClip: 'text',
                                 color: 'transparent',
                             }}
@@ -134,7 +134,7 @@ export const Footer: React.FC = () => {
                             mb={2}
                             sx={{
                                 background:
-                                    'linear-gradient(to left, rgb(238, 187, 195), rgb(223, 99, 117))',
+                                    'linear-gradient(to left, rgb(242, 191, 226), rgb(223, 99, 117))',
                                 backgroundClip: 'text',
                                 color: 'transparent',
                             }}
@@ -167,10 +167,10 @@ export const Footer: React.FC = () => {
                     <Grid item xs={12} sm={3}>
                         <Typography
                             variant="subtitle1"
-                            mb={{ xs: 2, sm: 0 }}
+                            mb={2}
                             sx={{
                                 background:
-                                    'linear-gradient(to left, rgb(238, 187, 195), rgb(223, 99, 117))',
+                                    'linear-gradient(to left, rgb(242, 191, 226), rgb(223, 99, 117))',
                                 backgroundClip: 'text',
                                 color: 'transparent',
                             }}
@@ -181,8 +181,8 @@ export const Footer: React.FC = () => {
                             <Image
                                 src="/bmc_qr.png"
                                 alt="Buy me a coffee"
-                                width={200}
-                                height={200}
+                                width={160}
+                                height={160}
                                 style={{
                                     top: 0,
                                     maxWidth: '90%',

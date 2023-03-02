@@ -5,7 +5,9 @@ import Stack from '@mui/material/Stack';
 
 import { Footer, Navbar } from '#src/components';
 
-export const ClientLayout: React.FC = ({ children }) => {
+export const ClientLayout: React.FC<{ children: React.ReactNode }> = ({
+    children,
+}) => {
     const router = useRouter();
     const [key, setKey] = useState('');
 
@@ -28,7 +30,7 @@ export const ClientLayout: React.FC = ({ children }) => {
                 minHeight="100vh"
                 sx={{
                     background:
-                        'linear-gradient(-90deg, rgba(238, 187, 195, 0.4), rgba(193, 202, 243, 0.4))',
+                        'linear-gradient(-90deg, rgba(242, 191, 226, 0.4), rgba(193, 202, 243, 0.4))',
                 }}
                 justifyContent="space-between"
             >

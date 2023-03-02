@@ -12,8 +12,8 @@ const theme = createTheme();
 function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter();
     return (
-        <ThemeProvider theme={theme}>
-            <RecoilRoot>
+        <RecoilRoot>
+            <ThemeProvider theme={theme}>
                 <DefaultSeo
                     titleTemplate="%s | CaCaCa Blog"
                     defaultTitle="CaCaCa Blog"
@@ -42,8 +42,8 @@ function MyApp({ Component, pageProps }: AppProps) {
                     }}
                 />
                 <Component {...pageProps} />
-            </RecoilRoot>
-        </ThemeProvider>
+            </ThemeProvider>
+        </RecoilRoot>
     );
 }
 

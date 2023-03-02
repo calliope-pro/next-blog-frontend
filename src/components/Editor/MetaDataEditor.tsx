@@ -11,12 +11,8 @@ import Stack from '@mui/material/Stack';
 import Switch from '@mui/material/Switch';
 import TextField from '@mui/material/TextField';
 
-import {
-    LocalizationProvider,
-    MobileDatePicker,
-    MobileDateTimePicker,
-} from '@mui/lab';
-import AdapterDayjs from '@mui/lab/AdapterDayjs';
+import { LocalizationProvider, MobileDatePicker, MobileDateTimePicker } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 import { adminPostBlog } from '#src/utils/api/auth';
 import { useCategoriesState } from '#src/utils/hooks';

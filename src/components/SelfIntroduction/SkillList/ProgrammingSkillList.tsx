@@ -17,6 +17,8 @@ import {
     NumpyIcon,
     NuxtIcon,
     PandasIcon,
+    PrettierIcon,
+    PytestIcon,
     PythonIcon,
     PytorchIcon,
     ReactIcon,
@@ -28,8 +30,12 @@ import {
 } from '#src/components';
 import {
     ChakraIcon,
+    ESLintIcon,
+    FramerMotionIcon,
+    JestIcon,
     JQueryIcon,
     MuiIcon,
+    NestjsIcon,
     VuetifyIcon,
 } from '#src/components/Icons';
 
@@ -50,7 +56,7 @@ export const ProgrammingSkillList: React.FC = () => {
             component="nav"
             subheader={
                 <>
-                    <Typography variant="h5">Programming</Typography>
+                    <Typography variant="h5">Programming Languages</Typography>
                     <Divider />
                 </>
             }
@@ -107,6 +113,12 @@ export const ProgrammingSkillList: React.FC = () => {
                         </ListItemIcon>
                         <ListItemText primary="PyTorch" />
                     </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
+                            <PytestIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Pytest" />
+                    </ListItem>
                 </List>
             </Collapse>
 
@@ -122,15 +134,15 @@ export const ProgrammingSkillList: React.FC = () => {
                 <List component="div" disablePadding>
                     <ListItem sx={{ pl: 4 }}>
                         <ListItemIcon>
-                            <JQueryIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="jQuery" />
-                    </ListItem>
-                    <ListItem sx={{ pl: 4 }}>
-                        <ListItemIcon>
                             <TypeScriptIcon />
                         </ListItemIcon>
                         <ListItemText primary="TypeScript" />
+                    </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
+                            <JQueryIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="jQuery" />
                     </ListItem>
                     <ListItem sx={{ pl: 4 }}>
                         <ListItemIcon>
@@ -158,6 +170,12 @@ export const ProgrammingSkillList: React.FC = () => {
                     </ListItem>
                     <ListItem sx={{ pl: 4 }}>
                         <ListItemIcon>
+                            <FramerMotionIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Framer Motion" />
+                    </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
                             <SvelteIcon />
                         </ListItemIcon>
                         <ListItemText primary="Svelte / SvelteKit" />
@@ -179,6 +197,30 @@ export const ProgrammingSkillList: React.FC = () => {
                             <VuetifyIcon />
                         </ListItemIcon>
                         <ListItemText primary="Vuetify" />
+                    </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
+                            <NestjsIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Nest" />
+                    </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
+                            <ESLintIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="ESLint" />
+                    </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
+                            <PrettierIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Prettier" />
+                    </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
+                            <JestIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Jest" />
                     </ListItem>
                 </List>
             </Collapse>

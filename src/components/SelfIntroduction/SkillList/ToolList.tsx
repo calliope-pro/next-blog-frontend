@@ -14,6 +14,7 @@ import {
     GitHubIcon,
     GitIcon,
     NotionIcon,
+    OpenAPIIcon,
     SwaggerIcon,
     VScodeIcon,
 } from '#src/components/Icons';
@@ -66,6 +67,12 @@ export const ToolList: React.FC = () => {
                         <DockerIcon />
                     </ListItemIcon>
                     <ListItemText primary="Docker" />
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
+                        <OpenAPIIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="OpenAPI" />
                 </ListItem>
                 <ListItem>
                     <ListItemIcon>

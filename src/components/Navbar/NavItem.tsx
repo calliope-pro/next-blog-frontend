@@ -1,7 +1,8 @@
 import type { navItem as navItemType } from '#src/types';
 
 import NextLink from 'next/link';
-import { Link as MuiLink, Typography } from '@mui/material';
+import MuiLink from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
 
 import { COLORS } from '#src/styles';
 

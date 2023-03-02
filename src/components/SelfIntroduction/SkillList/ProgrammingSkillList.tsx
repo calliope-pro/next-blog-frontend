@@ -7,7 +7,8 @@ import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import { Divider, Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
 import {
     DjangoIcon,
     FastapiIcon,

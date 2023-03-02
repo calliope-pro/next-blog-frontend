@@ -6,7 +6,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { prism, okaidia } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { useRecoilValue } from 'recoil';
 import remarkGfm from 'remark-gfm';
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 
 import { CodeContainer } from './CodeContainer';
 import { LinkCard } from '#src/components/LinkCard';

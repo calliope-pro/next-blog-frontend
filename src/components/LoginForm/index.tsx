@@ -3,7 +3,11 @@ import type { User } from '#src/types';
 import assert from 'assert';
 import { useForm } from 'react-hook-form';
 import { useSetRecoilState } from 'recoil';
-import { FormControl, InputLabel, Input, Button, Box } from '@mui/material';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import Input from '@mui/material/Input';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 import { isAuthenticatedState } from '#src/atoms/authAtom';
 import { Loader } from '#src/components/Loader';

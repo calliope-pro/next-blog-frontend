@@ -1,7 +1,11 @@
 import style from './md-editor.module.scss';
 
 import { useState, useContext, useRef, ClipboardEvent } from 'react';
-import { Alert, Box, Button, Snackbar, TextareaAutosize } from '@mui/material';
+import Alert from '@mui/material/Alert';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import TextareaAutosize from '@mui/material/TextareaAutosize';
 
 import { blogDataContext } from './contexts';
 import { adminPostBlog, adminPostImageBase64URL } from '#src/utils/api/auth';

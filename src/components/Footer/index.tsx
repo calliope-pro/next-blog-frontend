@@ -3,14 +3,12 @@ import styles from './footer.module.scss';
 import dayjs from 'dayjs';
 import NextLink from 'next/link';
 import Image from 'next/image';
-import {
-    Box,
-    Container,
-    Grid,
-    Stack,
-    Link as MuiLink,
-    Typography,
-} from '@mui/material';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
+import MuiLink from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
 
 import { COLORS } from '#src/styles';
 

@@ -1,5 +1,8 @@
 import dayjs from 'dayjs';
-import { Box, Container, Divider, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
+import Typography from '@mui/material/Typography';
 
 import { MarkdownView, ShareButtons } from '#src/components';
 import { BlogIndex } from './BlogIndex';

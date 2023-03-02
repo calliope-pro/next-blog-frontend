@@ -1,7 +1,13 @@
 import type { Blog } from '#src/types';
 
 import { useState } from 'react';
-import { Tabs, Tab, Box, SxProps, Theme, Container } from '@mui/material';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+
+import { SxProps } from '@mui/system/styleFunctionSx/styleFunctionSx';
+import { Theme } from '@mui/material/styles/createTheme';
 
 import { MarkdownView } from '#src/components';
 import { COLORS } from '#src/styles';

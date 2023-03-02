@@ -1,7 +1,11 @@
 import type { navItem } from '#src/types';
 
 import NextLink from 'next/link';
-import { AppBar, Box, Container, Link as MuiLink, Stack } from '@mui/material';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import MuiLink from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 

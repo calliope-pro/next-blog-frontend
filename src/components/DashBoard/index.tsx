@@ -2,7 +2,9 @@ import type { BlogTableData } from '#src/types';
 
 import NextLink from 'next/link';
 import { v1 as uuid1 } from 'uuid';
-import { Alert, Fab, Snackbar } from '@mui/material';
+import Alert from '@mui/material/Alert';
+import Fab from '@mui/material/Fab';
+import Snackbar from '@mui/material/Snackbar';
 import AddIcon from '@mui/icons-material/Add';
 
 import { Loader } from '#src/components';

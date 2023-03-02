@@ -1,13 +1,11 @@
 import NextLink from 'next/link';
 import { ReactNode, useState } from 'react';
-import {
-    Card,
-    CardContent,
-    CardMedia,
-    CardActionArea,
-    CircularProgress,
-    Typography,
-} from '@mui/material';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import CardActionArea from '@mui/material/CardActionArea';
+import CircularProgress from '@mui/material/CircularProgress';
+import Typography from '@mui/material/Typography';
 
 import { useFetchLinkPreviewHook } from '#src/utils/hooks';
 

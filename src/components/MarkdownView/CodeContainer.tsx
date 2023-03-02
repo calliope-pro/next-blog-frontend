@@ -1,6 +1,9 @@
 import { Fira_Code } from 'next/font/google';
 import { useRecoilState } from 'recoil';
-import { Box, IconButton, Tooltip, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
+import Typography from '@mui/material/Typography';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 

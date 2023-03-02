@@ -5,15 +5,13 @@ import markdownToTxt from 'markdown-to-txt';
 import NextLink from 'next/link';
 import path from 'path';
 import { useState } from 'react';
-import {
-    Box,
-    Card,
-    Chip,
-    Container,
-    Link as MuiLink,
-    Skeleton,
-    Stack,
-} from '@mui/material';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import Chip from '@mui/material/Chip';
+import Container from '@mui/material/Container';
+import MuiLink from '@mui/material/Link';
+import Skeleton from '@mui/material/Skeleton';
+import Stack from '@mui/material/Stack';
 
 import { COLORS } from '#src/styles';
 import { useInView } from 'react-intersection-observer';

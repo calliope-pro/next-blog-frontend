@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
 
 import { NextSeo } from 'next-seo';
-import { Container, Typography } from '@mui/material';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 
 import { ClientLayout } from '#src/layouts/client';
 import NextLink from 'next/link';
@@ -32,7 +33,9 @@ const Term: NextPage = () => {
                     <Typography>
                         当ブログで掲載している文章や画像などにつきましては、無断転載することを禁止します。
                         当ブログは著作権や肖像権の侵害を目的としたものではありません。著作権や肖像権に関して問題がございましたら、
-                        <NextLink href="/#contact">お問い合わせフォーム</NextLink>
+                        <NextLink href="/#contact">
+                            お問い合わせフォーム
+                        </NextLink>
                         よりご連絡ください。迅速に対応いたします。
                     </Typography>
 
@@ -41,7 +44,8 @@ const Term: NextPage = () => {
                     </Typography>
                     <Typography>
                         当ブログは基本的にリンクフリーです。リンクを行う場合の許可や連絡は不要です。
-                        ただし、外部リンクや、<NextLink href="/robots.txt">robots.txt</NextLink>
+                        ただし、外部リンクや、
+                        <NextLink href="/robots.txt">robots.txt</NextLink>
                         で不許可となっているリンクや、インラインフレームの使用や、画像の直リンクはご遠慮ください。法的に認められている引用の範囲を超えて、無断で転載することを禁止します。
                     </Typography>
                 </Container>

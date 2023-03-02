@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
 
 import { NextSeo } from 'next-seo';
-import { Container, Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 
 import { ClientLayout } from '#src/layouts/client';
 import NextLink from 'next/link';

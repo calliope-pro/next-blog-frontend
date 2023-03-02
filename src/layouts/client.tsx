@@ -1,7 +1,7 @@
 import Script from 'next/script';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { Stack } from '@mui/material';
+import Stack from '@mui/material/Stack';
 
 import { Footer, Navbar } from '#src/components';
 

@@ -1,6 +1,6 @@
 import type { BlogTableData } from '#src/types';
 
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { v1 as uuid1 } from 'uuid';
 import { Alert, Fab, Snackbar } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
@@ -40,15 +40,15 @@ export const DashBoard: React.FC = () => {
     return (
         <>
             <BlogTable rows={rows} />
-            <Link href={`admin/${getNewUuid()}`} passHref>
-                <Fab
-                    size="large"
-                    color="primary"
-                    sx={{ left: 40, bottom: 30, position: 'fixed' }}
-                >
-                    <AddIcon color="inherit" />
-                </Fab>
-            </Link>
+            <Fab
+                LinkComponent={NextLink}
+                href={`admin/${getNewUuid()}`}
+                size="large"
+                color="primary"
+                sx={{ left: 40, bottom: 30, position: 'fixed' }}
+            >
+                <AddIcon color="inherit" />
+            </Fab>
         </>
     );
 };

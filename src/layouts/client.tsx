@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { Stack } from '@mui/material';
 
 import { Footer, Navbar } from '#src/components';
-import { COLORS } from '#src/styles';
 
 export const ClientLayout: React.FC = ({ children }) => {
     const router = useRouter();
@@ -27,7 +26,10 @@ export const ClientLayout: React.FC = ({ children }) => {
 
             <Stack
                 minHeight="100vh"
-                sx={{ bgcolor: COLORS.mainColor }}
+                sx={{
+                    background:
+                        'linear-gradient(-90deg, rgba(238, 187, 195, 0.4), rgba(193, 202, 243, 0.4))',
+                }}
                 justifyContent="space-between"
             >
                 <Navbar />

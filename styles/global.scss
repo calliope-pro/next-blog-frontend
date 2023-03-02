@@ -1,6 +1,13 @@
 // bultin CSS用
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap');
 
+html,
 body {
     margin: 0;
-    overflow-y: scroll;
+    line-height: 220%;
+    overflow-x: clip;
+}
+
+* {
+    font-family: 'BIZ UDPGothic', sans-serif;
 }

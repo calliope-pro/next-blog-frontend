@@ -5,11 +5,14 @@ import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import { RecoilRoot } from 'recoil';
 import { useRouter } from 'next/router';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme();
 
 function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter();
     return (
-        <>
+        <ThemeProvider theme={theme}>
             <RecoilRoot>
                 <DefaultSeo
                     titleTemplate="%s | CaCaCa Blog"
@@ -40,7 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 />
                 <Component {...pageProps} />
             </RecoilRoot>
-        </>
+        </ThemeProvider>
     );
 }
 

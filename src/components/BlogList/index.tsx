@@ -26,21 +26,21 @@ export const BlogList: React.FC<{ blogs: Blog[] }> = ({ blogs }) => {
     }, [isDisplayed]);
 
     return (
-        <Container sx={{ flex: 1 }}>
+        <Container>
             {/* ブログ一覧 */}
-            <Stack gap={4}>
+            <Stack spacing={10}>
                 {blogs.slice(0, blogsDisplay).map((blogData) => (
                     <BlogListItem
+                        key={blogData.uuid}
                         blog={blogData}
                         categoryData={categoryData}
-                        key={blogData.uuid}
                     />
                 ))}
             </Stack>
 
             {/* 無限スクロール */}
             {blogsDisplay >= (blogs.length || 0) ? (
-                <Typography textAlign="center" variant="h4" pt={5}>
+                <Typography textAlign="center" variant="h5" my={5}>
                     No More Contents...
                 </Typography>
             ) : (

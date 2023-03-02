@@ -1,10 +1,11 @@
 import type { BlogTableData } from '#src/types';
 
 import dayjs from 'dayjs';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { useState } from 'react';
 import {
     Box,
+    Link as MuiLink,
     Table,
     TableBody,
     TableCell,
@@ -187,17 +188,13 @@ export const BlogTable: React.FC<{ rows: BlogTableData[] }> = ({
                                             key={index}
                                         >
                                             <TableCell id={labelId}>
-                                                <Link
+                                                <MuiLink
+                                                    component={NextLink}
                                                     href={`/admin/${row.uuid}`}
+                                                    sx={{ fontSize: 'large' }}
                                                 >
-                                                    <a
-                                                        style={{
-                                                            fontSize: 'large',
-                                                        }}
-                                                    >
-                                                        {row.title}
-                                                    </a>
-                                                </Link>
+                                                    {row.title}
+                                                </MuiLink>
                                             </TableCell>
                                             <TableCell align="left">
                                                 {dayjs

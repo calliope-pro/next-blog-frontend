@@ -1,6 +1,6 @@
 import style from './md-view.module.scss';
 
-import Image from 'next/image';
+import { Fira_Code } from 'next/font/google';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { prism, okaidia } from 'react-syntax-highlighter/dist/cjs/styles/prism';
@@ -12,72 +12,76 @@ import { CodeContainer } from './CodeContainer';
 import { LinkCard } from '#src/components/LinkCard';
 import { isDarkState } from '#src/atoms/codeStyleAtom';
 
+const firaCodeFont = Fira_Code({ weight: '500', subsets: ['latin'] });
+
 export const MarkdownView: React.FC<{ body: string }> = ({ body }) => {
     // codeのカラーモード
     const isDark = useRecoilValue(isDarkState);
 
     return (
-        <Box>
-            <ReactMarkdown
-                className={style.mdView}
-                remarkPlugins={[remarkGfm]}
-                components={{
-                    code({ inline, className, children, ...props }) {
-                        const match =
-                            /^language-(\w+)(\[[\x20-\x7e]+?\])?$/.exec(
-                                className || '',
-                            );
-                        return !inline && match ? (
-                            // codeblockの時
-                            <SyntaxHighlighter
-                                style={(isDark ? okaidia : prism) as string}
-                                language={match[1].toLowerCase()}
-                                PreTag={CodeContainer}
-                                showLineNumbers
-                                filename={match[2]}
-                                fileExtension={match[1]}
-                                customStyle={{ padding: '25px 1rem 22px 1rem' }}
-                                {...props}
-                            >
-                                {String(children).replace(/\n$/, '')}
-                            </SyntaxHighlighter>
-                        ) : (
-                            // inlinecodeの時
-                            <code className={style['inline-code']} {...props}>
-                                {children}
-                            </code>
-                        );
-                    },
-                    // h1は目次用にid付加・headerに隠れないようにsx設定
-                    h1: ({ children, node }) => (
-                        <Box
-                            component="h1"
-                            id={String(node.position?.start.line)}
-                            sx={{
-                                scrollMarginTop: { xs: '135px', sm: '95px' },
-                            }}
+        <ReactMarkdown
+            className={style.mdView}
+            remarkPlugins={[remarkGfm]}
+            components={{
+                code({ inline, className, children, ...props }) {
+                    const match = /^language-(\w+)(\[[\x20-\x7e]+?\])?$/.exec(
+                        className || '',
+                    );
+                    return !inline && match ? (
+                        // codeblockの時
+                        <SyntaxHighlighter
+                            style={(isDark ? okaidia : prism) as string}
+                            language={match[1].toLowerCase()}
+                            PreTag={CodeContainer}
+                            showLineNumbers
+                            filename={match[2]}
+                            fileExtension={match[1]}
+                            customStyle={{ padding: '25px 1rem 22px 1rem' }}
+                            {...props}
                         >
-                            {String(children)}
-                        </Box>
-                    ),
-                    img: ({ src, alt }) => (
-                        <Image
-                            src={src as string}
-                            alt={alt as string}
-                            quality={90}
-                            width="100%"
-                            height="40%"
-                            layout="responsive"
-                            objectFit="contain"
-                        />
-                    ),
-                    a: ({ children, href }) => (
-                        <LinkCard href={href as string}>{children}</LinkCard>
-                    ),
-                }}
-            >
-                {body}
-            </ReactMarkdown>
-        </Box>
+                            {String(children).replace(/\n$/, '')}
+                        </SyntaxHighlighter>
+                    ) : (
+                        // inlinecodeの時
+                        <code
+                            className={`${style['inline-code']} ${firaCodeFont.className}`}
+                            {...props}
+                        >
+                            {children}
+                        </code>
+                    );
+                },
+                // h1は目次用にid付加・headerに隠れないようにsx設定
+                h1: ({ children, node }) => (
+                    <Box
+                        component="h1"
+                        id={String(node.position?.start.line)}
+                        mt={16}
+                        sx={{
+                            scrollMarginTop: { xs: '135px', sm: '95px' },
+                        }}
+                    >
+                        {String(children)}
+                    </Box>
+                ),
+                img: ({ src, alt }) => (
+                    <Box
+                        component="img"
+                        display="block"
+                        src={src as string}
+                        alt={alt as string}
+                        sx={{ objectFit: 'contain' }}
+                        width={{ lg: '60%', md: '70%', xs: '80%' }}
+                        mx="auto"
+                        my={2}
+                    />
+                ),
+                a: ({ children, href }) => (
+                    <LinkCard href={href as string}>{children}</LinkCard>
+                ),
+            }}
+        >
+            {body}
+        </ReactMarkdown>
     );
 };

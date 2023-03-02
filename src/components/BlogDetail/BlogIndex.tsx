@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import {
@@ -58,20 +58,17 @@ export const BlogIndex: React.FC<{ body: string }> = ({ body }) => {
                         components={{
                             h1: ({ children, node, index }) => (
                                 <ListItem dense>
-                                    <Link
+                                    <MuiLink
                                         href={`#${node.position!.start.line}`}
-                                        passHref
+                                        component={NextLink}
+                                        underline="none"
+                                        color={COLORS.baseColor}
+                                        fontSize="18px"
                                     >
-                                        <MuiLink
-                                            underline="none"
-                                            color={COLORS.baseColor}
-                                            fontSize="18px"
-                                        >
-                                            {`${
-                                                index! + 1
-                                            }. ${children.toString()}`}
-                                        </MuiLink>
-                                    </Link>
+                                        {`${
+                                            index! + 1
+                                        }. ${children.toString()}`}
+                                    </MuiLink>
                                 </ListItem>
                             ),
                         }}

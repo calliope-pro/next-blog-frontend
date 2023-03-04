@@ -11,12 +11,14 @@ import Box from '@mui/material/Box';
 import { CodeContainer } from './CodeContainer';
 import { LinkCard } from '#src/components/LinkCard';
 import { isDarkState } from '#src/atoms/codeStyleAtom';
+import { useMemo } from 'react';
 
 const firaCodeFont = Fira_Code({ weight: '500', subsets: ['latin'] });
 
 export const MarkdownView: React.FC<{ body: string }> = ({ body }) => {
     // codeのカラーモード
     const isDark = useRecoilValue(isDarkState);
+    const syntaxStyle = useMemo(() => (isDark ? okaidia : prism), [isDark]);
 
     return (
         <ReactMarkdown
@@ -30,7 +32,7 @@ export const MarkdownView: React.FC<{ body: string }> = ({ body }) => {
                     return !inline && match ? (
                         // codeblockの時
                         <SyntaxHighlighter
-                            style={(isDark ? okaidia : prism) as string}
+                            style={syntaxStyle}
                             language={match[1].toLowerCase()}
                             PreTag={CodeContainer}
                             showLineNumbers

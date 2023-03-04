@@ -17,6 +17,7 @@
     "@mui/icons-material": "^5.2.5",
     "@mui/material": "^5.2.7",
     "@mui/x-date-pickers": "^5.0.20",
+    "@vercel/og": "^0.3.0",
     "axios": "^0.24.0",
     "dayjs": "^1.10.7",
     "lodash": "^4.17.21",

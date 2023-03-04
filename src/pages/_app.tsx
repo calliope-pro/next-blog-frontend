@@ -32,10 +32,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                         type: 'website',
                         images: [
                             {
-                                url: '/favicon.ico',
-                                width: 800,
-                                height: 600,
-                                alt: 'Logo',
+                                width: 1200,
+                                height: 630,
+                                url: '*.vercel.app/api/og',
+                                alt: 'open graph card',
                             },
                         ],
                         site_name: 'CaCaCa Blog',

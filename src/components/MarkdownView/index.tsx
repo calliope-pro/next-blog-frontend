@@ -32,6 +32,8 @@ export const MarkdownView: React.FC<{ body: string }> = ({ body }) => {
                     return !inline && match ? (
                         // codeblockの時
                         <SyntaxHighlighter
+                            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                            // @ts-ignore
                             style={syntaxStyle}
                             language={match[1].toLowerCase()}
                             PreTag={CodeContainer}

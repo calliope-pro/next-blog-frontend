@@ -1,5 +1,4 @@
 import { NextApiRequest } from 'next';
-import satori from 'satori';
 import { ImageResponse } from '@vercel/og';
 
 export const config = {

@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                             {
                                 width: 1200,
                                 height: 630,
-                                url: '*.vercel.app/api/og',
+                                url: '/api/og',
                                 alt: 'open graph card',
                             },
                         ],

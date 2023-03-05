@@ -17,7 +17,7 @@ const Term: NextPage = () => {
                     images: [
                         {
                             url: new URL(
-                                '/api/og?title=利用規約・免責事項?description=CaCaCa Blogの利用規約・免責事項',
+                                '/api/og?title=利用規約・免責事項&description=CaCaCa Blogの利用規約・免責事項',
                                 process.env.NEXT_PUBLIC_FRONTEND_ORIGIN,
                             ).href,
                         },

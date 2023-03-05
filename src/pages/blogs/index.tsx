@@ -18,7 +18,7 @@ const BlogListPage: NextPage = () => {
                     images: [
                         {
                             url: new URL(
-                                '/api/og?title=ブログ一覧?description=CaCaCa Blogのブログ一覧',
+                                '/api/og?title=ブログ一覧&description=CaCaCa Blogのブログ一覧',
                                 process.env.NEXT_PUBLIC_FRONTEND_ORIGIN,
                             ).href,
                         },

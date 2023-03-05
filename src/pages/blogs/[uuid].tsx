@@ -23,7 +23,7 @@ const BlogDetailPage: NextPage<{ blog: Blog }> = ({ blog }) => {
                             images: [
                                 {
                                     url: new URL(
-                                        `/api/og?title=${blog.title}?description=${blog.sub_title}`,
+                                        `/api/og?title=${blog.title}&description=${blog.sub_title}`,
                                         process.env.NEXT_PUBLIC_FRONTEND_ORIGIN,
                                     ).href,
                                 },

@@ -17,7 +17,7 @@ const PrivacyPolicy: NextPage = () => {
                     images: [
                         {
                             url: new URL(
-                                '/api/og?title=プライバシーポリシー?description=CaCaCa Blogのプライバシーポリシー',
+                                '/api/og?title=プライバシーポリシー&description=CaCaCa Blogのプライバシーポリシー',
                                 process.env.NEXT_PUBLIC_FRONTEND_ORIGIN,
                             ).href,
                         },

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Stack from '@mui/material/Stack';
 
 import { Footer, Navbar } from '#src/components';
+import Head from 'next/head';
 
 export const ClientLayout: React.FC<{ children: React.ReactNode }> = ({
     children,
@@ -18,6 +19,19 @@ export const ClientLayout: React.FC<{ children: React.ReactNode }> = ({
     }, [router.isReady, router.asPath]);
     return (
         <>
+            <Head>
+                {/* eslint-disable-next-line @next/next/next-script-for-ga */}
+                <script
+                    async
+                    src="https://www.googletagmanager.com/gtag/js?id=G-Y838E4H5WF"
+                />
+                <script
+                    id="Google-tag-gtag-js"
+                    dangerouslySetInnerHTML={{
+                        __html: "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-Y838E4H5WF');",
+                    }}
+                />
+            </Head>
             <Script
                 async
                 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5059912395081075"

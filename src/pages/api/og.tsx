@@ -39,7 +39,7 @@ export default function handler(req: NextApiRequest) {
                 >
                     {title}
                 </div>
-                <div style={{ width: '100%' }}>{description}</div>
+                <div style={{ width: '100%', fontSize: 36 }}>{description}</div>
                 <div
                     style={{
                         position: 'absolute',
@@ -55,7 +55,7 @@ export default function handler(req: NextApiRequest) {
                         height: 60,
                         width: 60,
                     }}
-                ></div>
+                />
             </div>
         ),
         { width: 1200, height: 630 },

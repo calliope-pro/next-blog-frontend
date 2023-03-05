@@ -13,6 +13,16 @@ const PrivacyPolicy: NextPage = () => {
             <NextSeo
                 title="プライバシーポリシー"
                 description="CaCaCa Blogのプライバシーポリシー"
+                openGraph={{
+                    images: [
+                        {
+                            url: new URL(
+                                '/api/og?title=プライバシーポリシー?description=CaCaCa Blogのプライバシーポリシー',
+                                process.env.NEXT_PUBLIC_FRONTEND_ORIGIN,
+                            ).href,
+                        },
+                    ],
+                }}
             />
             <ClientLayout>
                 <Container>

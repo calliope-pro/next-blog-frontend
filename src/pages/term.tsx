@@ -13,6 +13,16 @@ const Term: NextPage = () => {
             <NextSeo
                 title="利用規約・免責事項"
                 description="CaCaCa Blogの利用規約・免責事項"
+                openGraph={{
+                    images: [
+                        {
+                            url: new URL(
+                                '/api/og?title=利用規約・免責事項?description=CaCaCa Blogの利用規約・免責事項',
+                                process.env.NEXT_PUBLIC_FRONTEND_ORIGIN,
+                            ).href,
+                        },
+                    ],
+                }}
             />
             <ClientLayout>
                 <Container>

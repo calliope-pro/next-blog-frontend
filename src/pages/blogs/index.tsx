@@ -11,7 +11,20 @@ const BlogListPage: NextPage = () => {
     if (!blogs && !error) return <Loader />;
     return (
         <>
-            <NextSeo title="ブログ一覧" description="CaCaCa Blogのブログ一覧" />
+            <NextSeo
+                title="ブログ一覧"
+                description="CaCaCa Blogのブログ一覧"
+                openGraph={{
+                    images: [
+                        {
+                            url: new URL(
+                                '/api/og?title=ブログ一覧?description=CaCaCa Blogのブログ一覧',
+                                process.env.NEXT_PUBLIC_FRONTEND_ORIGIN,
+                            ).href,
+                        },
+                    ],
+                }}
+            />
             <ClientLayout>
                 <BlogList blogs={blogs ?? []} />
             </ClientLayout>

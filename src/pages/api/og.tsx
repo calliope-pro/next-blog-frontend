@@ -1,5 +1,6 @@
 import { NextApiRequest } from 'next';
 import { ImageResponse } from '@vercel/og';
+import { COLORS } from '#src/styles';
 
 export const config = {
     runtime: 'edge',
@@ -17,33 +18,44 @@ export default function handler(req: NextApiRequest) {
         : '主にプログラミングに関することを取り上げるブログ兼ポートフォリオ';
     return new ImageResponse(
         (
-            <div tw="flex h-full items-center bg-white justify-center">
-                <div tw="bg-gray-50 flex">
-                    <div tw="flex flex-col md:flex-row w-full py-12 px-4 md:items-center justify-between p-8">
-                        <h2 tw="flex flex-col text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 text-left">
-                            <span>{title}</span>
-                            <span tw="text-indigo-600">{description}</span>
-                        </h2>
-                        <div tw="mt-8 flex md:mt-0">
-                            <div tw="flex rounded-md shadow">
-                                <a
-                                    href="#"
-                                    tw="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white"
-                                >
-                                    Get started
-                                </a>
-                            </div>
-                            <div tw="ml-3 flex rounded-md shadow">
-                                <a
-                                    href="#"
-                                    tw="flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600"
-                                >
-                                    Learn more
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    width: '100%',
+                    height: '100%',
+                    flexDirection: 'column',
+                    padding: '0 120px',
+                    rowGap: 60,
+                    border: `32px solid ${COLORS.mainColor}`,
+                    backgroundColor: '#fff',
+                }}
+            >
+                <div
+                    style={{
+                        width: '100%',
+                        fontSize: 60,
+                    }}
+                >
+                    {title}
                 </div>
+                <div style={{ width: '100%' }}>{description}</div>
+                <div
+                    style={{
+                        position: 'absolute',
+                        right: 120,
+                        bottom: '10%',
+                        backgroundImage: `url(${
+                            new URL(
+                                '/favicon.png',
+                                process.env.NEXT_PUBLIC_FRONTEND_ORIGIN,
+                            ).href
+                        }`,
+                        backgroundSize: '100% 100%',
+                        height: 60,
+                        width: 60,
+                    }}
+                ></div>
             </div>
         ),
         { width: 1200, height: 630 },

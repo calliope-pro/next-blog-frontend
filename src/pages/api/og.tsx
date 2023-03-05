@@ -45,12 +45,7 @@ export default function handler(req: NextApiRequest) {
                         position: 'absolute',
                         right: 120,
                         bottom: '10%',
-                        backgroundImage: `url(${
-                            new URL(
-                                '/favicon.png',
-                                process.env.NEXT_PUBLIC_FRONTEND_ORIGIN,
-                            ).href
-                        }`,
+                        backgroundImage: `url(${process.env.NEXT_PUBLIC_FRONTEND_ORIGIN!}/favicon.png`,
                         backgroundSize: '100% 100%',
                         height: 60,
                         width: 60,

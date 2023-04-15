@@ -21,7 +21,6 @@ export const useBlogListState = (onlyPublished = true) => {
     return useSWR<Blog[], Error>(
         'blogList',
         () => fetchBlogList(onlyPublished),
-        { suspense: true },
     );
 };
 

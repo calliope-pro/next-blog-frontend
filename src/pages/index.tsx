@@ -10,7 +10,16 @@ const HomePage: NextPage = () => {
         <>
             <NextSeo
                 title="ホーム"
-                description="CaCaCa Blogのホームページになります。サイトや管理人の自己紹介、問い合わせフォームがあります。"
+                openGraph={{
+                    images: [
+                        {
+                            url: new URL(
+                                '/api/og?title=ホーム',
+                                process.env.NEXT_PUBLIC_FRONTEND_ORIGIN,
+                            ).href,
+                        },
+                    ],
+                }}
             />
             <ClientLayout>
                 <SelfIntroduction />

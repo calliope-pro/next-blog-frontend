@@ -1,6 +1,7 @@
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import { Divider, Typography } from '@mui/material';
+import Divider from '@mui/material/Divider';
+import Typography from '@mui/material/Typography';
 
 export const CertificationsList: React.FC = () => {
     return (

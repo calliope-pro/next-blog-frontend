@@ -1,5 +1,9 @@
+import { Fira_Code } from 'next/font/google';
 import { useRecoilState } from 'recoil';
-import { Box, IconButton, Tooltip, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
+import Typography from '@mui/material/Typography';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
@@ -22,10 +26,13 @@ const FILE_EXTENSIONS: { [lang: string]: string } = {
 };
 
 type PropType = {
+    children: React.ReactNode;
     filename?: string;
     fileExtension: string;
     node: Element;
 };
+
+const firaCodeFont = Fira_Code({ weight: '400', subsets: ['latin'] });
 
 export const CodeContainer: React.FC<PropType> = (props) => {
     const [isDark, setIsDark] = useRecoilState(isDarkState);
@@ -36,7 +43,7 @@ export const CodeContainer: React.FC<PropType> = (props) => {
     const currentUrl = useCurrentAbsUrl();
 
     return (
-        <Box position="relative" sx={{ marginTop: '60px' }} {...props}>
+        <Box {...props} sx={{ '& *': firaCodeFont.style }} position="relative">
             {fileExtension && (
                 <Typography
                     variant="subtitle2"
@@ -59,8 +66,8 @@ export const CodeContainer: React.FC<PropType> = (props) => {
                 <IconButton
                     onClick={() => setIsDark((prev) => !prev)}
                     sx={{
-                        top: '20px',
-                        right: 'calc(13% - 20px)',
+                        top: '24px',
+                        right: 'calc(1em)',
                         position: 'absolute',
                         zIndex: 500,
                         color: isDark ? 'rgb(248, 248, 242)' : 'default',
@@ -84,8 +91,8 @@ export const CodeContainer: React.FC<PropType> = (props) => {
                         );
                     }}
                     sx={{
-                        top: '20px',
-                        right: 'calc(14% + 11px)',
+                        top: '24px',
+                        right: 'calc(2em + 16px)',
                         position: 'absolute',
                         zIndex: 500,
                         color: isDark ? 'rgb(248, 248, 242)' : 'default',

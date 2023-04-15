@@ -5,17 +5,24 @@ import {
     SiChakraui,
     SiDjango,
     SiDocker,
+    SiEslint,
     SiFastapi,
     SiFigma,
+    SiFramer,
     SiGithub,
     SiGithubactions,
+    SiJest,
     SiJquery,
     SiMaterialui,
+    SiNestjs,
     SiNextdotjs,
     SiNotion,
     SiNumpy,
     SiNuxtdotjs,
+    SiOpenapiinitiative,
     SiPandas,
+    SiPrettier,
+    SiPytest,
     SiPytorch,
     SiScikitlearn,
     SiSelenium,
@@ -54,6 +61,10 @@ export const PytorchIcon: React.FC = () => {
     return <SiPytorch fontSize={24} />;
 };
 
+export const PytestIcon: React.FC = () => {
+    return <SiPytest fontSize={24} />;
+};
+
 export const NumpyIcon: React.FC = () => {
     return <SiNumpy fontSize={24} />;
 };
@@ -64,6 +75,14 @@ export const PandasIcon: React.FC = () => {
 
 export const ScikitLearnIcon: React.FC = () => {
     return <SiScikitlearn fontSize={28} />;
+};
+
+export const ESLintIcon: React.FC = () => {
+    return <SiEslint fontSize={24} />;
+};
+
+export const PrettierIcon: React.FC = () => {
+    return <SiPrettier fontSize={24} />;
 };
 
 export const JQueryIcon: React.FC = () => {
@@ -86,6 +105,10 @@ export const MuiIcon: React.FC = () => {
     return <SiMaterialui fontSize={22} />;
 };
 
+export const FramerMotionIcon: React.FC = () => {
+    return <SiFramer fontSize={24} />;
+};
+
 export const SvelteIcon: React.FC = () => {
     return <SiSvelte fontSize={24} />;
 };
@@ -102,8 +125,16 @@ export const VuetifyIcon: React.FC = () => {
     return <SiVuetify fontSize={24} />;
 };
 
+export const NestjsIcon: React.FC = () => {
+    return <SiNestjs fontSize={24} />;
+}
+
 export const TypeScriptIcon: React.FC = () => {
     return <SiTypescript fontSize={22} />;
+};
+
+export const JestIcon: React.FC = () => {
+    return <SiJest fontSize={22} />;
 };
 
 export const GitIcon: React.FC = () => {
@@ -120,6 +151,10 @@ export const GitHubActionsIcon: React.FC = () => {
 
 export const DockerIcon: React.FC = () => {
     return <SiDocker fontSize={26} />;
+};
+
+export const OpenAPIIcon: React.FC = () => {
+    return <SiOpenapiinitiative fontSize={24} />;
 };
 
 export const SwaggerIcon: React.FC = () => {

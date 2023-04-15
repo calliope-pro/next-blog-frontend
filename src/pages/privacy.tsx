@@ -1,10 +1,11 @@
 import type { NextPage } from 'next';
 
 import { NextSeo } from 'next-seo';
-import { Container, Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 
 import { ClientLayout } from '#src/layouts/client';
-import Link from 'next/link';
+import NextLink from 'next/link';
 
 const PrivacyPolicy: NextPage = () => {
     return (
@@ -12,6 +13,16 @@ const PrivacyPolicy: NextPage = () => {
             <NextSeo
                 title="プライバシーポリシー"
                 description="CaCaCa Blogのプライバシーポリシー"
+                openGraph={{
+                    images: [
+                        {
+                            url: new URL(
+                                '/api/og?title=プライバシーポリシー&description=CaCaCa Blogのプライバシーポリシー',
+                                process.env.NEXT_PUBLIC_FRONTEND_ORIGIN,
+                            ).href,
+                        },
+                    ],
+                }}
             />
             <ClientLayout>
                 <Container>
@@ -52,12 +63,13 @@ const PrivacyPolicy: NextPage = () => {
                     <Typography>
                         当ブログでは、第三者配信の広告サービス（Googleアドセンス、株式会社サムライファクトリー社の提供する忍者AdMax）を利用しており、ユーザーの興味に応じた商品やサービスの広告を表示するため、クッキー（Cookie）を使用しております。
                         クッキーを使用することで当サイトはお客様のコンピュータを識別できるようになりますが、お客様個人を特定できるものではありません。詳細については、
-                        <Link
+                        <NextLink
                             href="https://policies.google.com/privacy"
                             target="_blank"
+                            rel="noopener"
                         >
                             Googleのプライバシーポリシー
-                        </Link>
+                        </NextLink>
                         をご覧ください。
                         もし、第三者にデータ送信を行いたくない場合は、ブラウザのCookie機能をオフにしてアクセスしてください。
                     </Typography>
@@ -67,12 +79,13 @@ const PrivacyPolicy: NextPage = () => {
                     </Typography>
                     <Typography>
                         当ブログでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。このGoogleアナリティクスはトラフィックデータの収集のためにクッキー（Cookie）を使用しております。トラフィックデータは匿名で収集されており、個人を特定するものではありません。詳細については、同様に
-                        <Link
+                        <NextLink
                             href="https://policies.google.com/privacy"
                             target="_blank"
+                            rel="noopener"
                         >
                             Googleのプライバシーポリシー
-                        </Link>
+                        </NextLink>
                         をご覧ください。
                     </Typography>
 

@@ -3,21 +3,16 @@ import type { Blog } from '#src/types';
 import dayjs from 'dayjs';
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import {
-    Autocomplete,
-    Box,
-    Button,
-    FormControlLabel,
-    Stack,
-    Switch,
-    TextField,
-} from '@mui/material';
-import {
-    LocalizationProvider,
-    MobileDatePicker,
-    MobileDateTimePicker,
-} from '@mui/lab';
-import AdapterDayjs from '@mui/lab/AdapterDayjs';
+import Autocomplete from '@mui/material/Autocomplete';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Stack from '@mui/material/Stack';
+import Switch from '@mui/material/Switch';
+import TextField from '@mui/material/TextField';
+
+import { LocalizationProvider, MobileDatePicker, MobileDateTimePicker } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 import { adminPostBlog } from '#src/utils/api/auth';
 import { useCategoriesState } from '#src/utils/hooks';

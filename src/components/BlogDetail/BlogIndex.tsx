@@ -1,16 +1,14 @@
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import {
-    Box,
-    Collapse,
-    IconButton,
-    Link as MuiLink,
-    List,
-    ListItem,
-    Stack,
-    Typography,
-} from '@mui/material';
+import Box from '@mui/material/Box';
+import Collapse from '@mui/material/Collapse';
+import IconButton from '@mui/material/IconButton';
+import MuiLink from '@mui/material/Link';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 import CloseIcon from '@mui/icons-material/Close';
 import ListIcon from '@mui/icons-material/List';
 
@@ -58,20 +56,17 @@ export const BlogIndex: React.FC<{ body: string }> = ({ body }) => {
                         components={{
                             h1: ({ children, node, index }) => (
                                 <ListItem dense>
-                                    <Link
+                                    <MuiLink
                                         href={`#${node.position!.start.line}`}
-                                        passHref
+                                        component={NextLink}
+                                        underline="none"
+                                        color={COLORS.baseColor}
+                                        fontSize="18px"
                                     >
-                                        <MuiLink
-                                            underline="none"
-                                            color={COLORS.baseColor}
-                                            fontSize="18px"
-                                        >
-                                            {`${
-                                                index! + 1
-                                            }. ${children.toString()}`}
-                                        </MuiLink>
-                                    </Link>
+                                        {`${
+                                            index! + 1
+                                        }. ${children.toString()}`}
+                                    </MuiLink>
                                 </ListItem>
                             ),
                         }}

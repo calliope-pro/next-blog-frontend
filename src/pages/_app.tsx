@@ -5,12 +5,15 @@ import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import { RecoilRoot } from 'recoil';
 import { useRouter } from 'next/router';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme();
 
 function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter();
     return (
-        <>
-            <RecoilRoot>
+        <RecoilRoot>
+            <ThemeProvider theme={theme}>
                 <DefaultSeo
                     titleTemplate="%s | CaCaCa Blog"
                     defaultTitle="CaCaCa Blog"
@@ -29,18 +32,21 @@ function MyApp({ Component, pageProps }: AppProps) {
                         type: 'website',
                         images: [
                             {
-                                url: '/favicon.ico',
-                                width: 800,
-                                height: 600,
-                                alt: 'Logo',
+                                width: 1200,
+                                height: 630,
+                                url: new URL(
+                                    '/api/og',
+                                    process.env.NEXT_PUBLIC_FRONTEND_ORIGIN,
+                                ).href,
+                                alt: 'open graph card',
                             },
                         ],
                         site_name: 'CaCaCa Blog',
                     }}
                 />
                 <Component {...pageProps} />
-            </RecoilRoot>
-        </>
+            </ThemeProvider>
+        </RecoilRoot>
     );
 }
 

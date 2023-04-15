@@ -1,7 +1,13 @@
 import type { navItem } from '#src/types';
 
-import Link from 'next/link';
-import { AppBar, Box, Container, Link as MuiLink, Stack } from '@mui/material';
+import NextLink from 'next/link';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import MuiLink from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import { NavItem } from './NavItem';
 import { COLORS } from '#src/styles';
@@ -12,13 +18,19 @@ export const Navbar: React.FC = () => {
         { label: 'Home', url: '/' },
         { label: 'Blog', url: '/blogs' },
     ];
+    const theme = useTheme();
+    const isOverSm = useMediaQuery(theme.breakpoints.up('sm'));
 
     return (
         <AppBar
             position="sticky"
             sx={{
                 backgroundColor: COLORS.baseColor,
+                top: 0,
+                left: 0,
                 mb: 5,
+                backdropFilter: 'blur(2px)',
+                py: { sm: 1 },
             }}
         >
             <Container>
@@ -27,12 +39,15 @@ export const Navbar: React.FC = () => {
                     justifyContent="space-between"
                     alignItems="center"
                 >
-                    <Box component="h1">
-                        <Link href="/" passHref>
-                            <MuiLink color={COLORS.whiteColor} underline="none">
-                                CaCaCa Blog
-                            </MuiLink>
-                        </Link>
+                    <Box component={isOverSm ? 'h1' : 'h2'}>
+                        <MuiLink
+                            href="/"
+                            component={NextLink}
+                            color={COLORS.whiteColor}
+                            underline="none"
+                        >
+                            CaCaCa Blog
+                        </MuiLink>
                     </Box>
 
                     <Stack direction="row" justifyContent="space-between">

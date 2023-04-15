@@ -1,23 +1,23 @@
 @use '../../../styles/globals.module.scss' as g;
 
 .mdView {
-    background-color: g.$main-color;
     color: g.$base-color;
     min-height: 100vh;
     & > :nth-child(1) {
-        margin-top: 0;
+        margin-top: 16px;
     }
     & > :nth-last-child(1) {
         margin-bottom: 0;
     }
 
     .inline-code {
-        background-color: rgb(238, 187, 195, 0.6);
+        background-color: rgb(242, 191, 226, 0.6);
         color: g.$base-color;
         border-radius: 0.3em;
-        padding: 4px 5px;
-        white-space: nowrap;
-        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        padding: 4px;
+        margin-left: 2px;
+        margin-right: 2px;
+        white-space: break-spaces;
     }
     table {
         border-collapse: collapse;
@@ -29,23 +29,23 @@
     }
     blockquote {
         position: relative;
-        padding: 5px 15px 5px 55px;
+        margin-left: 4%;
+        padding: 22px 3em 5px 3em;
         box-sizing: border-box;
         color: g.$base-color;
         background: g.$accent-color;
         border-radius: 8px;
         &::before {
-            display: inline-block;
+            // display: inline-block;
             position: absolute;
             top: -2px;
             left: 9px;
-            width: 38px;
+            width: 40px;
             height: 32px;
             text-align: center;
             content: '☆';
             color: g.$white-color;
             font-size: 18px;
-            line-height: 30px;
             background: g.$accent-dark-color;
             font-weight: 100;
         }
@@ -56,16 +56,9 @@
             top: 30px;
             height: 0;
             width: 0;
-            border-left: 19px solid g.$accent-dark-color;
-            border-right: 19px solid g.$accent-dark-color;
+            border-left: 20px solid g.$accent-dark-color;
+            border-right: 20px solid g.$accent-dark-color;
             border-bottom: 10px solid transparent;
-        }
-        p {
-            position: relative;
-            padding: 0;
-            margin: 10px 0;
-            z-index: 3;
-            line-height: 1.7;
         }
     }
 }

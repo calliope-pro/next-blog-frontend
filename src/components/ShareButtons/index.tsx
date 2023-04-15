@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { Fab, Grow, Tooltip } from '@mui/material';
+import Fab from '@mui/material/Fab';
+import Grow from '@mui/material/Grow';
+import Tooltip from '@mui/material/Tooltip';
 import CloseIcon from '@mui/icons-material/Close';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import ShareIcon from '@mui/icons-material/Share';

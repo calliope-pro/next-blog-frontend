@@ -10,6 +10,7 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { isDarkState } from '#src/atoms/codeStyleAtom';
 import { COLORS } from '#src/styles';
 import { useCurrentAbsUrl } from '#src/utils/hooks';
+import { useLayoutEffect } from 'react';
 
 const FILE_EXTENSIONS: { [lang: string]: string } = {
     python: '.py',

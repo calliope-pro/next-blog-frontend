@@ -1,4 +1,5 @@
-import { Grid } from '@mui/material';
+import Grid from '@mui/material/Grid';
+
 import { WorksGridItem } from './WorksGridItem';
 
 export const WorksGrid: React.FC = () => {

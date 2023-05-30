@@ -1,5 +1,6 @@
 import { BsLine } from 'react-icons/bs';
-import { FaGitAlt, FaPython, FaReact } from 'react-icons/fa';
+import { DiGoogleCloudPlatform } from 'react-icons/di';
+import { FaGitAlt, FaPython, FaReact, FaUbuntu } from 'react-icons/fa';
 import { IoLogoJavascript, IoLogoVue } from 'react-icons/io5';
 import {
     SiChakraui,
@@ -13,7 +14,7 @@ import {
     SiGithubactions,
     SiJest,
     SiJquery,
-    SiMaterialui,
+    SiMui,
     SiNestjs,
     SiNextdotjs,
     SiNotion,
@@ -21,17 +22,20 @@ import {
     SiNuxtdotjs,
     SiOpenapiinitiative,
     SiPandas,
+    SiPostgresql,
     SiPrettier,
     SiPytest,
     SiPytorch,
     SiScikitlearn,
     SiSelenium,
+    SiStorybook,
     SiSvelte,
     SiVisualstudiocode,
     SiVuetify,
     SiSwagger,
     SiTypescript,
 } from 'react-icons/si';
+import { TbIconsOff } from 'react-icons/tb';
 
 export const LineIcon: React.FC = () => {
     return <BsLine size={24} color="#06C755" />;
@@ -85,6 +89,10 @@ export const PrettierIcon: React.FC = () => {
     return <SiPrettier fontSize={24} />;
 };
 
+export const StorybookIcon: React.FC = () => {
+    return <SiStorybook fontSize={24} />;
+};
+
 export const JQueryIcon: React.FC = () => {
     return <SiJquery fontSize={22} />;
 };
@@ -102,7 +110,7 @@ export const ChakraIcon: React.FC = () => {
 };
 
 export const MuiIcon: React.FC = () => {
-    return <SiMaterialui fontSize={22} />;
+    return <SiMui fontSize={22} />;
 };
 
 export const FramerMotionIcon: React.FC = () => {
@@ -127,7 +135,7 @@ export const VuetifyIcon: React.FC = () => {
 
 export const NestjsIcon: React.FC = () => {
     return <SiNestjs fontSize={24} />;
-}
+};
 
 export const TypeScriptIcon: React.FC = () => {
     return <SiTypescript fontSize={22} />;
@@ -153,6 +161,10 @@ export const DockerIcon: React.FC = () => {
     return <SiDocker fontSize={26} />;
 };
 
+export const UbuntuIcon: React.FC = () => {
+    return <FaUbuntu fontSize={24} />;
+};
+
 export const OpenAPIIcon: React.FC = () => {
     return <SiOpenapiinitiative fontSize={24} />;
 };
@@ -171,4 +183,16 @@ export const NotionIcon: React.FC = () => {
 
 export const FigmaIcon: React.FC = () => {
     return <SiFigma fontSize={24} />;
+};
+
+export const NoIcon: React.FC = () => {
+    return <TbIconsOff fontSize={24} />;
+};
+
+export const PostgreIcon: React.FC = () => {
+    return <SiPostgresql fontSize={24} />;
+};
+
+export const GCPIcon: React.FC = () => {
+    return <DiGoogleCloudPlatform fontSize={24} />;
 };

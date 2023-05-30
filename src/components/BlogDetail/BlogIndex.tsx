@@ -23,14 +23,14 @@ export const BlogIndex: React.FC<{ body: string }> = ({ body }) => {
                 justifyContent="space-between"
                 alignItems="center"
             >
-                <Typography fontSize="24px" color={COLORS.baseColor}>
+                <Typography fontSize={20} color={COLORS.baseColor}>
                     目次
                 </Typography>
                 {isHidden ? (
                     <IconButton onClick={() => setIsHidden(false)}>
                         <ListIcon
                             sx={{
-                                fontSize: '40px',
+                                fontSize: 36,
                                 color: COLORS.accentDarkColor,
                                 cursor: 'pointer',
                             }}
@@ -40,7 +40,7 @@ export const BlogIndex: React.FC<{ body: string }> = ({ body }) => {
                     <IconButton onClick={() => setIsHidden(true)}>
                         <CloseIcon
                             sx={{
-                                fontSize: '40px',
+                                fontSize: 36,
                                 color: COLORS.accentDarkColor,
                                 cursor: 'pointer',
                             }}
@@ -49,19 +49,28 @@ export const BlogIndex: React.FC<{ body: string }> = ({ body }) => {
                 )}
             </Stack>
             <Collapse in={!isHidden}>
-                <List>
+                <List disablePadding>
                     <ReactMarkdown
                         allowedElements={['h1']}
                         includeElementIndex
                         components={{
                             h1: ({ children, node, index }) => (
-                                <ListItem dense>
+                                <ListItem
+                                    sx={{
+                                        py: 0,
+                                    }}
+                                >
                                     <MuiLink
                                         href={`#${node.position!.start.line}`}
                                         component={NextLink}
                                         underline="none"
                                         color={COLORS.baseColor}
-                                        fontSize="18px"
+                                        fontSize={16}
+                                        sx={{
+                                            ':hover': {
+                                                color: COLORS.accentDarkColor,
+                                            },
+                                        }}
                                     >
                                         {`${
                                             index! + 1

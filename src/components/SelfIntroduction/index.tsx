@@ -1,64 +1,137 @@
 import NextLink from 'next/link';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Stack from '@mui/material/Stack';
+import MuiLink from '@mui/material/Link';
+import Step from '@mui/material/Step';
+import StepContent from '@mui/material/StepContent';
+import StepLabel from '@mui/material/StepLabel';
+import Stepper from '@mui/material/Stepper';
 import Typography from '@mui/material/Typography';
 
 import { SkillList } from '#src/components';
-import { ContactForm } from './ContactForm';
+import { WorksGrid } from './WorksGrid';
 
 export const SelfIntroduction: React.FC = () => {
     return (
-        <Stack>
-            <Container>
-                <Typography variant="h3" textAlign="center">
-                    About
-                </Typography>
-                <Box component="p">
-                    CaCaCa Blogをご覧いただきありがとうございます。
-                </Box>
-                <Box component="p">
-                    Next.js + TypeScript +
-                    FastAPIをメインに当サイトを作成しました。
-                    当サイトはポートフォリオ兼ブログサイトとなっています。
-                    プログラミングのことが主になるとは思いますが、その他のこともブログにしていきたいと思います。
-                </Box>
-                <Box component="p">
-                    初めまして、私は東京工業大学の生命理工学系に所属しており、2022年4月時点で大学3年生となります。
-                    入学後にプログラミングを始め、現在は研究ではゲノム情報、仕事では主にWeb開発に携わっております。
-                    競技プログラミングの
-                    <NextLink
-                        href="https://atcoder.jp/users/calliope"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        AtCoder
-                    </NextLink>
-                    にもしばしば参加しており、2021年1月に緑コーダーとなりました。
-                    最近では、機械学習・ディープラーニングも勉強しています。
-                    <br />
-                    現在はLancers・CrowdWorksといったクラウドソーシング、ITベンチャーにてインターン・フリーランス、またプログラミングスクールにてメンターとして活動しています。
-                    過去の実績等は<NextLink href="/works">こちら</NextLink>
-                    から確認できます。お問い合わせやお仕事等に関しましてはお手数をお掛けしますが以下の
-                    <NextLink href="#contact">フォーム</NextLink>
-                    にて連絡をお願いいたします。
-                </Box>
-
-                <Typography variant="h3" textAlign="center">
-                    Skills
-                </Typography>
-                <SkillList />
-
-                <Typography
-                    id="contact"
-                    variant="h3"
-                    textAlign="center"
-                    sx={{ scrollMarginTop: { xs: '135px', sm: '95px' } }}
+        <Container>
+            <Typography variant="h4" textAlign="center" letterSpacing={2}>
+                Profile
+            </Typography>
+            <Box component="p">
+                東京工業大学生命理工学院生命理工学系の学士4年生(2023年4月～)です。
+                <br />
+                大学入学後に学問と並行しプログラミングを独学で始め、プログラミング歴は約3年になります。
+                研究ではゲノム情報学を専攻しており、ab-initio遺伝子予測ツールを開発する研究を行っております。
+                その他では、主にフロントエンド・バックエンドエンジニアとしてWeb開発に携わっております。
+                競技プログラミングの
+                <NextLink
+                    href="https://atcoder.jp/users/calliope"
+                    target="_blank"
+                    rel="noopener"
                 >
-                    Contact
-                </Typography>
-                <ContactForm />
-            </Container>
-        </Stack>
+                    AtCoder
+                </NextLink>
+                にもしばしば参加しており、2021年1月に緑コーダーとなりました。
+                最近では、機械学習・ディープラーニング(主にNLPに興味があり)も勉強しています。
+            </Box>
+
+            <Typography
+                variant="h4"
+                textAlign="center"
+                letterSpacing={2}
+                mt={12}
+            >
+                Detail About
+            </Typography>
+            <Box component="p">
+                当ブログはCMS, デザイン, JWT認証を含め個人実装しました。
+                <br />
+                フロントエンドは、主にNext.js + TypeScript + Mui + Recoil +
+                ReactMarkdown + SWRを用いて、Vercel上にデプロイしています。
+                <br />
+                バックエンドは、主にFastAPI +
+                python-joseを用いて、Deta上にデプロイしています。
+                <br />
+                フロントエンドのみ
+                <MuiLink
+                    component={NextLink}
+                    href="https://github.com/calliope-pro/next-blog-frontend"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    ソースコード(GitHub)
+                </MuiLink>
+                を公開しています。
+            </Box>
+
+            <Typography
+                variant="h4"
+                textAlign="center"
+                letterSpacing={2}
+                mt={12}
+            >
+                Skills
+            </Typography>
+            <SkillList />
+
+            <Typography
+                variant="h4"
+                textAlign="center"
+                letterSpacing={2}
+                mt={12}
+            >
+                History
+            </Typography>
+            <Stepper activeStep={99} orientation="vertical">
+                <Step>
+                    <StepLabel StepIconComponent={() => <Box>2012～</Box>}>
+                        ラ・サール学園
+                    </StepLabel>
+                    <StepContent></StepContent>
+                </Step>
+                <Step>
+                    <StepLabel StepIconComponent={() => <Box>2020～</Box>}>
+                        東京工業大学
+                    </StepLabel>
+                    <StepContent></StepContent>
+                </Step>
+            </Stepper>
+
+            {/* <Typography
+                variant="h4"
+                textAlign="center"
+                letterSpacing={2}
+                mt={12}
+            >
+                Career
+            </Typography>
+            <Stepper activeStep={99} orientation="vertical">
+                <Step>
+                    <StepLabel
+                        StepIconComponent={() => <Box>2021～</Box>}
+                    ></StepLabel>
+                    <StepContent></StepContent>
+                </Step>
+                <Step>
+                    <StepLabel StepIconComponent={() => <Box>2020～</Box>}>
+                        東京工業大学
+                    </StepLabel>
+                    <StepContent></StepContent>
+                </Step>
+            </Stepper>
+            <Typography variant="body1" textAlign="center">
+                詳細な職務経歴は、直接お問い合わせください。
+            </Typography> */}
+
+            <Typography
+                variant="h4"
+                textAlign="center"
+                letterSpacing={2}
+                mt={12}
+            >
+                Works ･ Projects
+            </Typography>
+            <WorksGrid />
+        </Container>
     );
 };

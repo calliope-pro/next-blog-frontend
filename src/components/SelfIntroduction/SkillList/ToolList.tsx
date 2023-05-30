@@ -10,12 +10,16 @@ import Collapse from '@mui/material/Collapse';
 import {
     DockerIcon,
     FigmaIcon,
+    GCPIcon,
     GitHubActionsIcon,
     GitHubIcon,
     GitIcon,
+    NoIcon,
     NotionIcon,
     OpenAPIIcon,
+    PostgreIcon,
     SwaggerIcon,
+    UbuntuIcon,
     VScodeIcon,
 } from '#src/components/Icons';
 import ExpandLess from '@mui/icons-material/ExpandLess';
@@ -64,6 +68,12 @@ export const ToolList: React.FC = () => {
                 </ListItem>
                 <ListItem>
                     <ListItemIcon>
+                        <UbuntuIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Ubuntu" />
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
                         <DockerIcon />
                     </ListItemIcon>
                     <ListItemText primary="Docker" />
@@ -97,6 +107,24 @@ export const ToolList: React.FC = () => {
                         <FigmaIcon />
                     </ListItemIcon>
                     <ListItemText primary="Figma" />
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
+                        <PostgreIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="PostgreSQL" />
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
+                        <GCPIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Google Cloud Platform" />
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
+                        <NoIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Deta" />
                 </ListItem>
             </Collapse>
         </List>

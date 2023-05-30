@@ -15,8 +15,8 @@ export const BlogDetail: React.FC<{ blog: Blog }> = ({ blog }) => {
                 <ShareButtons />
 
                 <Box paddingTop={3} textAlign="center">
-                    <Typography variant="h3">{blog.title}</Typography>
-                    <Typography variant="h5">{blog.sub_title}</Typography>
+                    <Typography variant="h4">{blog.title}</Typography>
+                    <Typography variant="subtitle1">{blog.sub_title}</Typography>
                 </Box>
 
                 <Box textAlign="right">

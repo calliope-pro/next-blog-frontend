@@ -49,6 +49,15 @@ export const Footer: React.FC = () => {
                                 Home
                             </MuiLink>
                             <MuiLink
+                                href="/portfolio"
+                                component={NextLink}
+                                className={styles['blur-link']}
+                                underline="none"
+                                sx={{ color: COLORS.whiteColor }}
+                            >
+                                Portofolio
+                            </MuiLink>
+                            <MuiLink
                                 href="/blogs"
                                 component={NextLink}
                                 className={styles['blur-link']}
@@ -56,15 +65,6 @@ export const Footer: React.FC = () => {
                                 sx={{ color: COLORS.whiteColor }}
                             >
                                 Blog
-                            </MuiLink>
-                            <MuiLink
-                                href="/works"
-                                component={NextLink}
-                                className={styles['blur-link']}
-                                underline="none"
-                                sx={{ color: COLORS.whiteColor }}
-                            >
-                                Works
                             </MuiLink>
                             <MuiLink
                                 href="/#contact"
@@ -124,7 +124,7 @@ export const Footer: React.FC = () => {
                                 underline="none"
                                 sx={{ color: COLORS.whiteColor }}
                             >
-                                公式LINE
+                                LINE bot
                             </MuiLink>
                         </Stack>
                     </Grid>
@@ -177,7 +177,13 @@ export const Footer: React.FC = () => {
                         >
                             サポート
                         </Typography>
-                        <Box mx="auto">
+                        <Box
+                            mx="auto"
+                            component={NextLink}
+                            href="https://www.buymeacoffee.com/calliopepro"
+                            target="_blank"
+                            rel="noopener"
+                        >
                             <Image
                                 src="/bmc_qr.png"
                                 alt="Buy me a coffee"

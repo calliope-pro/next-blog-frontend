@@ -84,7 +84,7 @@ export const ContactForm = () => {
                     onClose={closeErrorAlert}
                     sx={{ p: 3 }}
                 >
-                    送信されませんでした。再度お試しくださいませ。
+                    送信されませんでした。再度お試しください。
                 </Alert>
             </Snackbar>
             <Box

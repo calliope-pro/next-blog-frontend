@@ -1,4 +1,4 @@
-import type { ContactContentType } from '#src/components/SelfIntroduction/ContactForm';
+import type { ContactContentType } from '#src/components/Home/ContactForm';
 import type {
     Blog,
     Category,

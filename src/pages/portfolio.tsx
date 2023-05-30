@@ -1,20 +1,17 @@
+import { SelfIntroduction } from '#src/components';
 import { ClientLayout } from '#src/layouts/client';
-import type { NextPage } from 'next';
-
 import { NextSeo } from 'next-seo';
 
-import { Home } from '#src/components/Home';
-
-const HomePage: NextPage = () => {
+const PortfolioPage = () => {
     return (
         <>
             <NextSeo
-                title="ホーム"
+                title="ポートフォリオ"
                 openGraph={{
                     images: [
                         {
                             url: new URL(
-                                '/api/og?title=ホーム',
+                                '/api/og?title=ポートフォリオ',
                                 process.env.NEXT_PUBLIC_FRONTEND_ORIGIN,
                             ).href,
                         },
@@ -22,10 +19,10 @@ const HomePage: NextPage = () => {
                 }}
             />
             <ClientLayout>
-                <Home />
+                <SelfIntroduction />
             </ClientLayout>
         </>
     );
 };
 
-export default HomePage;
+export default PortfolioPage;

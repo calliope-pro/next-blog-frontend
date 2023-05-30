@@ -16,6 +16,7 @@ import { COLORS } from '#src/styles';
 export const Navbar: React.FC = () => {
     const navItems: navItem[] = [
         { label: 'Home', url: '/' },
+        { label: 'Portfolio', url: '/portfolio' },
         { label: 'Blog', url: '/blogs' },
     ];
     const theme = useTheme();
@@ -28,9 +29,8 @@ export const Navbar: React.FC = () => {
                 backgroundColor: COLORS.baseColor,
                 top: 0,
                 left: 0,
-                mb: 5,
+                mb: 4,
                 backdropFilter: 'blur(2px)',
-                py: { sm: 1 },
             }}
         >
             <Container>

@@ -12,6 +12,9 @@ import { CodeContainer } from './CodeContainer';
 import { LinkCard } from '#src/components/LinkCard';
 import { isDarkState } from '#src/atoms/codeStyleAtom';
 import { useMemo } from 'react';
+import NextLink from 'next/link';
+import { Link as MuiLink, Typography } from '@mui/material';
+import { COLORS } from '#src/styles';
 
 const firaCodeFont = Fira_Code({ weight: '500', subsets: ['latin'] });
 
@@ -47,27 +50,52 @@ export const MarkdownView: React.FC<{ body: string }> = ({ body }) => {
                         </SyntaxHighlighter>
                     ) : (
                         // inlinecodeの時
-                        <code
-                            className={`${style['inline-code']} ${firaCodeFont.className}`}
+                        <Box
+                            component="code"
+                            className={firaCodeFont.className}
+                            whiteSpace="break-spaces"
+                            sx={{
+                                background:
+                                    'linear-gradient(transparent 60%, #ff6 60%)',
+                                marginX: '2px',
+                            }}
                             {...props}
                         >
                             {children}
-                        </code>
+                        </Box>
                     );
                 },
                 // h1は目次用にid付加・headerに隠れないようにsx設定
                 h1: ({ children, node }) => (
                     <Box
                         component="h1"
-                        id={String(node.position?.start.line)}
-                        mt={16}
-                        sx={{
-                            scrollMarginTop: { xs: '135px', sm: '95px' },
-                        }}
+                        mt={12}
+                        sx={{ scrollMarginTop: { xs: '135px', sm: '95px' } }}
                     >
-                        {String(children)}
+                        <MuiLink
+                            component={NextLink}
+                            color={COLORS.accentDarkColor}
+                            underline="hover"
+                            variant="h5"
+                            id={String(node.position?.start.line)}
+                            href={`#${String(node.position?.start.line)}`}
+                            sx={{
+                                ':hover': {
+                                    '::after': {
+                                        content: '" #"',
+                                        opacity: 1,
+                                        transition: 'opacity 1s',
+                                    },
+                                },
+                            }}
+                        >
+                            {String(children)}
+                        </MuiLink>
                     </Box>
                 ),
+                h2: (props) => {
+                    return <Box component="h2" {...props} />;
+                },
                 img: ({ src, alt }) => (
                     <Box
                         component="img"

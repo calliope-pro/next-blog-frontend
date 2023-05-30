@@ -36,6 +36,8 @@ import {
     JQueryIcon,
     MuiIcon,
     NestjsIcon,
+    NoIcon,
+    StorybookIcon,
     VuetifyIcon,
 } from '#src/components/Icons';
 
@@ -56,7 +58,7 @@ export const ProgrammingSkillList: React.FC = () => {
             component="nav"
             subheader={
                 <>
-                    <Typography variant="h5">Programming Languages</Typography>
+                    <Typography variant="h5">Frameworks</Typography>
                     <Divider />
                 </>
             }
@@ -81,7 +83,7 @@ export const ProgrammingSkillList: React.FC = () => {
                         <ListItemIcon>
                             <DjangoIcon />
                         </ListItemIcon>
-                        <ListItemText primary="Django" />
+                        <ListItemText primary="Django / DRF" />
                     </ListItem>
                     <ListItem sx={{ pl: 4 }}>
                         <ListItemIcon>
@@ -118,6 +120,30 @@ export const ProgrammingSkillList: React.FC = () => {
                             <PytestIcon />
                         </ListItemIcon>
                         <ListItemText primary="Pytest" />
+                    </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
+                            <NoIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Black" />
+                    </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
+                            <NoIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Flake8" />
+                    </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
+                            <NoIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="isort" />
+                    </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
+                            <NoIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Bandit" />
                     </ListItem>
                 </List>
             </Collapse>
@@ -215,6 +241,12 @@ export const ProgrammingSkillList: React.FC = () => {
                             <PrettierIcon />
                         </ListItemIcon>
                         <ListItemText primary="Prettier" />
+                    </ListItem>
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemIcon>
+                            <StorybookIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Storybook" />
                     </ListItem>
                     <ListItem sx={{ pl: 4 }}>
                         <ListItemIcon>

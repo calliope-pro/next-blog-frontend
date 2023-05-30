@@ -13,6 +13,7 @@ export const CertificationsList: React.FC = () => {
                     <Divider />
                 </>
             }
+            sx={{ mt: 2 }}
         >
             <ListItem sx={{ listStyle: 'disc', display: 'list-item' }}>
                 <Typography component="span">英検 2級</Typography>

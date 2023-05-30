@@ -25,10 +25,6 @@ export const LinkCard: React.FC<{
         <>
             {data && !error ? (
                 <Card
-                    component={NextLink}
-                    href={href}
-                    target={isExternalUrl ? '_blank' : undefined}
-                    rel={isExternalUrl ? 'noopener' : undefined}
                     elevation={isHovering ? 10 : 1}
                     onMouseEnter={() => setIsHovering(true)}
                     onMouseLeave={() => setIsHovering(false)}
@@ -36,13 +32,13 @@ export const LinkCard: React.FC<{
                         my: 1,
                         mx: 'auto',
                         borderRadius: 4,
-                        width: 'fit-content',
-                        maxWidth: { xs: '80%', sm: '60%' },
-                        display: 'block',
-                        textDecoration: 'none',
                     }}
                 >
                     <CardActionArea
+                        component={NextLink}
+                        href={href}
+                        target={isExternalUrl ? '_blank' : undefined}
+                        rel={isExternalUrl ? 'noopener' : undefined}
                         sx={{
                             p: 2,
                             display: 'flex',
@@ -59,22 +55,32 @@ export const LinkCard: React.FC<{
                             height={60}
                             sx={{
                                 width: 'fit-content',
+                                minHeight: 60,
                                 objectFit: 'contain',
+                                flexBasis: 'fit-content',
                             }}
                         />
-                        <CardContent sx={{ p: 0 }}>
-                            <Typography variant="h5" my={1}>
+                        <CardContent sx={{ flex: 1 }}>
+                            <Typography
+                                variant="h5"
+                                whiteSpace="pre-wrap"
+                                overflow="hidden"
+                                display="-webkit-box"
+                                sx={{
+                                    WebkitLineClamp: 2,
+                                    WebkitBoxOrient: 'vertical',
+                                }}
+                            >
                                 {data.title}
                             </Typography>
                             <Typography
                                 variant="body2"
                                 color="text.secondary"
-                                my={1}
+                                whiteSpace="pre-wrap"
+                                overflow="hidden"
+                                display="-webkit-box"
                                 sx={{
-                                    overflow: 'hidden',
-                                    textOverflow: 'ellipsis',
-                                    display: '-webkit-box',
-                                    WebkitLineClamp: 2,
+                                    WebkitLineClamp: 3,
                                     WebkitBoxOrient: 'vertical',
                                 }}
                             >

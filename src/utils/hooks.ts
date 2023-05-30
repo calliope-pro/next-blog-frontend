@@ -18,9 +18,8 @@ export const useVerifyAuthStateHook = () => {
 };
 
 export const useBlogListState = (onlyPublished = true) => {
-    return useSWR<Blog[], Error>(
-        'blogList',
-        () => fetchBlogList(onlyPublished),
+    return useSWR<Blog[], Error>('blogList', () =>
+        fetchBlogList(onlyPublished),
     );
 };
 

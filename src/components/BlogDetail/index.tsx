@@ -16,7 +16,9 @@ export const BlogDetail: React.FC<{ blog: Blog }> = ({ blog }) => {
 
                 <Box paddingTop={3} textAlign="center">
                     <Typography variant="h4">{blog.title}</Typography>
-                    <Typography variant="subtitle1">{blog.sub_title}</Typography>
+                    <Typography variant="subtitle1">
+                        {blog.sub_title}
+                    </Typography>
                 </Box>
 
                 <Box textAlign="right">

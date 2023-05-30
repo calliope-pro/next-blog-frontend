@@ -128,6 +128,7 @@ export const SelfIntroduction: React.FC = () => {
                 textAlign="center"
                 letterSpacing={2}
                 mt={12}
+                mb={1}
             >
                 Works ･ Projects
             </Typography>

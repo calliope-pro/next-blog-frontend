@@ -33,6 +33,7 @@ export const WorksGridItem: React.FC<WorksGridItemProps> = ({
                     image={image}
                     alt={title}
                     sx={{
+                        pt: 1,
                         objectFit: 'scale-down',
                         height: 140,
                     }}

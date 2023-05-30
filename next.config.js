@@ -4,7 +4,6 @@ module.exports = {
     locales: ['ja'],
     defaultLocale: 'ja',
   },
-  swcMinify: true,
   reactStrictMode: true,
   env: {
     ENV_SECURITY_CODE: process.env.ENV_SECURITY_CODE

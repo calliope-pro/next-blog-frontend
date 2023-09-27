@@ -75,11 +75,11 @@ export const MetaDataEditor: React.FC = () => {
                 autoComplete="off"
                 variant="outlined"
                 margin="normal"
-                helperText="max length 30."
+                helperText="max length 50."
                 required
                 error={errors.title ? true : false}
                 {...register('title', {
-                    maxLength: 30,
+                    maxLength: 50,
                     required: true,
                 })}
             />
